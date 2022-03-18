@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ufinterface>
+  <voucher type="费用报销">
+    <entry id="1">
+      <ccode>[expensecode]</ccode>
+      <cdigest>[person]+{报销}+[bgname]+{ [}+[oacode]+{]}</cdigest>      
+    </entry>
+    <entry id="2">      
+      <ccode>[taxcode]</ccode>
+      <cdigest>[person]+{报销}+[bgname]+{ [}+[oacode]+{]}</cdigest>      
+    </entry>
+    <entry id="3">      
+      <ccode>[accountcode]</ccode>
+      <cdigest>[person]+{报销}+{ [}+[oacode]+{]}</cdigest>
+    </entry>
+  </voucher>
+  <voucher type="借款">
+    <entry id="1">
+      <ccode>[otherarcode]</ccode>
+      <cdigest>[person]+{借款}+{ [}+[oacode]+{]}</cdigest>
+    </entry>
+    <entry id="2">
+      <ccode>[accountcode]</ccode>
+      <cdigest>[person]+{借款}+{ [}+[oacode]+{]}</cdigest>    
+    </entry>    
+  </voucher>
+  <voucher type="还款">
+    <entry id="1">
+      <ccode>[otherarcode]</ccode>
+      <cdigest>[person]+{还借款}+{ [}+[oacode]+{]}</cdigest>
+    </entry>
+    <entry id="2">
+      <ccode>[accountcode]</ccode>
+      <cdigest>[person]+{还借款}+{ [}+[oacode]+{]}</cdigest>
+    </entry>
+  </voucher>
+</ufinterface>

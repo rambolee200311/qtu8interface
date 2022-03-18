@@ -1,0 +1,6 @@
+﻿<xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+	<rs:data>
+		<z:row Auto_ID="4" cLink="R00000000014" cDwCode="01001" cCusAbbName="" iAmount="8" cexch_name="人民币" iExchRate="1" iAmount_f="8" bd_c="False" cDirection="贷" iNoTaxAmount_f="8" iNoTaxAmount="8" editprop="A" cCode="" cItem_Class="" ccode_name="" cDeptCode="" cDepName="" cItemCode="" cItemName="" cDefine1="" cDefine2="" iTax="" iNatTax="" iTaxRate="" cDefine22="" cDefine23="" cDefine24=""
+           cDefine25="" cDefine26="" cDefine27="" cDefine28="" cDefine29="" cDefine30="" cPerson="" cDigest=""/>
+	</rs:data>
+</xml>

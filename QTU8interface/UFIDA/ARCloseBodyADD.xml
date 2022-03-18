@@ -1,0 +1,6 @@
+﻿<xml xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:z="#RowsetSchema">
+
+	<rs:data>
+		<z:row iID="1000000008" ID="1000000008" bPrePay="False" iType="0" cType="应收款" cCusAbbName="" iAmt_f="140.00" iAmt="140.00" iRAmt_f="140.00" iRAmt="140.00" cCusVen="01001" iAmt_s="0" iRAmt_s="0" editprop="A" cKm="" ccode_name="" cXmClass="" cDepCode="" cDepName="" cPersonCode="" iOrderType="" ccItemCode="" cExpName="" cDefine22="" cDigest="" cMemo=""/>
+	</rs:data>
+</xml>

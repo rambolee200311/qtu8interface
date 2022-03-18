@@ -1,0 +1,494 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ufinterface>
+	<company code="996" name="北京升鑫网络科技有限公司">
+		<expensecode type="管理部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
+      <code  bgcode="15" bgname="装修费" u8code="660215" />
+      <code  bgcode="16" bgname="水电费" u8code="660216" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="660221" />
+      <code  bgcode="22" bgname="租赁费" u8code="660222" />
+      <code  bgcode="23" bgname="招聘费" u8code="660223" />
+      <code  bgcode="24" bgname="残保金" u8code="660224" />
+      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="销售部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
+      <code  bgcode="15" bgname="装修费" u8code="660115" />
+      <code  bgcode="16" bgname="水电费" u8code="660116" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<expensecode type="研发部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="5401020399" />
+    </expensecode>
+		<expensecode type="工程技术部">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<accountcode account="601369199" u8code="1002010101"/>
+		<accountcode account="321130100100421599" u8code="1002010101"/>
+    <accountcode account="127910799510901" u8code="1002010101"/>
+		<otherarcode u8code="122104"/>
+		<taxcode u8code="22210103"/>
+    <!--20210706增加工资福利-->
+    <wagecodes>
+      <wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102"/>
+      <wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105"/>
+      <wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102"/>
+      <wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105"/>
+    </wagecodes>
+		<deptype>
+      <dep type="管理部门" u8code="101" u8name="总裁办"/>
+      <dep type="管理部门" u8code="102" u8name="财务部"/>
+      <dep type="管理部门" u8code="103" u8name="商务部"/>
+      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
+      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
+      <dep type="管理部门" u8code="106" u8name="行政部"/>
+      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
+      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+      <dep type="销售部门" u8code="114" u8name="市场部"/>
+      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
+      <dep type="研发部门" u8code="109" u8name="产品部"/>
+      <dep type="研发部门" u8code="110" u8name="技术部"/>
+      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
+      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
+      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+    </deptype>
+	</company>
+	<company code="010" name="北京雨福网络科技有限公司">
+		<expensecode type="管理部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
+      <code  bgcode="15" bgname="装修费" u8code="660215" />
+      <code  bgcode="16" bgname="水电费" u8code="660216" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="660221" />
+      <code  bgcode="22" bgname="租赁费" u8code="660222" />
+      <code  bgcode="23" bgname="招聘费" u8code="660223" />
+      <code  bgcode="24" bgname="残保金" u8code="660224" />
+      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="销售部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
+      <code  bgcode="15" bgname="装修费" u8code="660115" />
+      <code  bgcode="16" bgname="水电费" u8code="660116" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<expensecode type="研发部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="工程技术部">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<accountcode account="10285000001449711" u8code="1002010101"/>
+		<otherarcode u8code="122104"/>
+		<taxcode u8code="22210103"/>
+		<deptype>
+      <dep type="管理部门" u8code="101" u8name="总裁办"/>
+      <dep type="管理部门" u8code="102" u8name="财务部"/>
+      <dep type="管理部门" u8code="103" u8name="商务部"/>
+      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
+      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
+      <dep type="管理部门" u8code="106" u8name="行政部"/>
+      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
+      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+      <dep type="销售部门" u8code="114" u8name="市场部"/>
+      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
+      <dep type="研发部门" u8code="109" u8name="产品部"/>
+      <dep type="研发部门" u8code="110" u8name="技术部"/>
+      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
+      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
+      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+    </deptype>
+	</company>
+	<company code="011" name="武汉青藤时代网络科技有限公司">
+		<expensecode type="管理部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
+      <code  bgcode="15" bgname="装修费" u8code="660215" />
+      <code  bgcode="16" bgname="水电费" u8code="660216" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="660221" />
+      <code  bgcode="22" bgname="租赁费" u8code="660222" />
+      <code  bgcode="23" bgname="招聘费" u8code="660223" />
+      <code  bgcode="24" bgname="残保金" u8code="660224" />
+      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="销售部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
+      <code  bgcode="15" bgname="装修费" u8code="660115" />
+      <code  bgcode="16" bgname="水电费" u8code="660116" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<expensecode type="研发部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="工程技术部">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<accountcode account="127910793810902" u8code="1002010101"/>
+		<accountcode account="416110100100224416" u8code="1002010201"/>
+		<otherarcode u8code="122104"/>
+		<taxcode u8code="22210103"/>
+		<deptype>
+      <dep type="管理部门" u8code="101" u8name="总裁办"/>
+      <dep type="管理部门" u8code="102" u8name="财务部"/>
+      <dep type="管理部门" u8code="103" u8name="商务部"/>
+      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
+      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
+      <dep type="管理部门" u8code="106" u8name="行政部"/>
+      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
+      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+      <dep type="销售部门" u8code="114" u8name="市场部"/>
+      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
+      <dep type="研发部门" u8code="109" u8name="产品部"/>
+      <dep type="研发部门" u8code="110" u8name="技术部"/>
+      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
+      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
+      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+    </deptype>
+	</company>
+	<company code="012" name="青腾时代（北京）信息科技有限公司">
+		<expensecode type="管理部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
+      <code  bgcode="15" bgname="装修费" u8code="660215" />
+      <code  bgcode="16" bgname="水电费" u8code="660216" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="660221" />
+      <code  bgcode="22" bgname="租赁费" u8code="660222" />
+      <code  bgcode="23" bgname="招聘费" u8code="660223" />
+      <code  bgcode="24" bgname="残保金" u8code="660224" />
+      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="销售部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
+      <code  bgcode="15" bgname="装修费" u8code="660115" />
+      <code  bgcode="16" bgname="水电费" u8code="660116" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<expensecode type="研发部门">
+      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
+      <code  bgcode="07" bgname="招待费" u8code="660207" />
+      <code  bgcode="08" bgname="办公费" u8code="660208" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
+      <code  bgcode="10" bgname="差旅费" u8code="660210" />
+      <code  bgcode="11" bgname="交通费" u8code="660211" />
+      <code  bgcode="12" bgname="通讯费" u8code="660212" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660299" />
+    </expensecode>
+		<expensecode type="工程技术部">
+      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
+      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
+      <code  bgcode="07" bgname="招待费" u8code="660107" />
+      <code  bgcode="08" bgname="办公费" u8code="660108" />
+      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
+      <code  bgcode="10" bgname="差旅费" u8code="660110" />
+      <code  bgcode="11" bgname="交通费" u8code="660111" />
+      <code  bgcode="12" bgname="通讯费" u8code="660112" />
+      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
+      <code  bgcode="14" bgname="房租及物业" u8code="" />
+      <code  bgcode="15" bgname="装修费" u8code="" />
+      <code  bgcode="16" bgname="水电费" u8code="" />
+      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
+      <code  bgcode="20" bgname="招投标费用" u8code="" />
+      <code  bgcode="21" bgname="会务费" u8code="" />
+      <code  bgcode="22" bgname="租赁费" u8code="" />
+      <code  bgcode="23" bgname="招聘费" u8code="" />
+      <code  bgcode="24" bgname="残保金" u8code="" />
+      <code  bgcode="25" bgname="中介机构费" u8code="" />
+      <code  bgcode="99" bgname="其他" u8code="660199" />
+    </expensecode>
+		<accountcode account="110919001310902" u8code="1002010101"/>
+		<accountcode account="110060635018800058706" u8code="1002010201"/>
+		<otherarcode u8code="122104"/>
+		<taxcode u8code="22210103"/>
+		<deptype>
+      <dep type="管理部门" u8code="101" u8name="总裁办"/>
+      <dep type="管理部门" u8code="102" u8name="财务部"/>
+      <dep type="管理部门" u8code="103" u8name="商务部"/>
+      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
+      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
+      <dep type="管理部门" u8code="106" u8name="行政部"/>
+      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
+      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+      <dep type="销售部门" u8code="114" u8name="市场部"/>
+      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
+      <dep type="研发部门" u8code="109" u8name="产品部"/>
+      <dep type="研发部门" u8code="110" u8name="技术部"/>
+      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
+      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
+      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+    </deptype>
+	</company>
+</ufinterface>

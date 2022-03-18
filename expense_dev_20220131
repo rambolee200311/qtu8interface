@@ -1,0 +1,19 @@
+POST http://localhost:44593/api/expense HTTP/1.1
+Content-type: application/json
+Host: localhost:44593
+Content-Length: 283
+
+{"ztcode":"996","head":{"oacode":"YWZDSPB-202201-0070","ddate":"2022-01-27 00:00:00","person":"常宽","accountcode":"127910799510901","prodname":"A产品线"},"body":[{"rowno":1,"bgcode":"99","bgname":"其他","amount":18000.0,"tax":0.00,"memo":"Q4团队费用","person":"常宽"}]}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.0
+X-AspNet-Version: 4.0.30319
+X-SourceFiles: =?UTF-8?B?QzpcYXBwXFFUVThpbnRlcmZhY2VcUVRVOGludGVyZmFjZVxhcGlcZXhwZW5zZQ==?=
+X-Powered-By: ASP.NET
+Date: Mon, 31 Jan 2022 04:04:47 GMT
+Content-Length: 98
+
+{"ztcode":"996","oacode":"YWZDSPB-202201-0070","u8code":"2022年1月记4","recode":"0","remsg":""}

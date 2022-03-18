@@ -1,0 +1,66 @@
+POST http://localhost:44593/api/expense HTTP/1.1
+Content-type: application/json
+Host: localhost:44593
+Content-Length: 305
+
+{"ztcode":"996","head":{"oacode":"YWZDSPB-202201-0067","ddate":"2022-01-27 00:00:00","person":"林家振","accountcode":"127910799510901","projname":"太平资产-其他-500"},"body":[{"rowno":1,"bgcode":"07","bgname":"差旅费","amount":18000.0,"tax":0.00,"memo":"Q4团队费用","person":"林家振"}]}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.0
+X-AspNet-Version: 4.0.30319
+X-SourceFiles: =?UTF-8?B?QzpcYXBwXFFUVThpbnRlcmZhY2VcUVRVOGludGVyZmFjZVxhcGlcZXhwZW5zZQ==?=
+X-Powered-By: ASP.NET
+Date: Mon, 31 Jan 2022 03:54:20 GMT
+Content-Length: 98
+
+{"ztcode":"996","oacode":"YWZDSPB-202201-0067","u8code":"2022年1月记1","recode":"0","remsg":""}
+
+------------------------------------------------------------------
+
+POST http://localhost:44593/api/expense HTTP/1.1
+Content-type: application/json
+Host: localhost:44593
+Content-Length: 305
+
+{"ztcode":"996","head":{"oacode":"YWZDSPB-202201-0068","ddate":"2022-01-27 00:00:00","person":"林家振","accountcode":"127910799510901","projname":"太平资产-其他-500"},"body":[{"rowno":1,"bgcode":"07","bgname":"差旅费","amount":18000.0,"tax":0.00,"memo":"Q4团队费用","person":"林家振"}]}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.0
+X-AspNet-Version: 4.0.30319
+X-SourceFiles: =?UTF-8?B?QzpcYXBwXFFUVThpbnRlcmZhY2VcUVRVOGludGVyZmFjZVxhcGlcZXhwZW5zZQ==?=
+X-Powered-By: ASP.NET
+Date: Mon, 31 Jan 2022 03:59:18 GMT
+Content-Length: 98
+
+{"ztcode":"996","oacode":"YWZDSPB-202201-0068","u8code":"2022年1月记2","recode":"0","remsg":""}
+
+------------------------------------------------------------------
+
+POST http://localhost:44593/api/expense HTTP/1.1
+Content-type: application/json
+Host: localhost:44593
+Content-Length: 305
+
+{"ztcode":"996","head":{"oacode":"YWZDSPB-202201-0069","ddate":"2022-01-27 00:00:00","person":"林家振","accountcode":"127910799510901","projname":"太平资产-其他-500"},"body":[{"rowno":1,"bgcode":"10","bgname":"差旅费","amount":18000.0,"tax":0.00,"memo":"Q4团队费用","person":"林家振"}]}
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Pragma: no-cache
+Content-Type: application/json; charset=utf-8
+Expires: -1
+Server: Microsoft-IIS/8.0
+X-AspNet-Version: 4.0.30319
+X-SourceFiles: =?UTF-8?B?QzpcYXBwXFFUVThpbnRlcmZhY2VcUVRVOGludGVyZmFjZVxhcGlcZXhwZW5zZQ==?=
+X-Powered-By: ASP.NET
+Date: Mon, 31 Jan 2022 04:00:31 GMT
+Content-Length: 98
+
+{"ztcode":"996","oacode":"YWZDSPB-202201-0069","u8code":"2022年1月记3","recode":"0","remsg":""}
+
+------------------------------------------------------------------
+
