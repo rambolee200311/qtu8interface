@@ -36,7 +36,7 @@ namespace QTU8interface.Entities
             try
             {
                 xmlDoc.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\voucherconfig.xml");
-                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(expense.ztcode.ToString());
+                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(expense.ztcode.ToString(), "", "");
                 if (u8login == null)
                 {
                     re.recode = "111";

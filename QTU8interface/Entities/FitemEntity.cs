@@ -22,8 +22,8 @@ namespace QTU8interface.Entities
             try
             {
                 //xmlDoc.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\customer.xml");
-               
-                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(fitem.ztcode.ToString());
+
+                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(fitem.ztcode.ToString(), "", "");
                 code = fitem.oacode;
                 if (u8login == null)
                 {

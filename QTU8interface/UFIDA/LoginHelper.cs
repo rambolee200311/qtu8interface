@@ -8,7 +8,7 @@ namespace QTU8interface.UFIDA
 {
     public class LoginHelper
     {
-        public static U8Login.clsLoginClass getU8LoginEntity(string accid)
+        public static U8Login.clsLoginClass getU8LoginEntity(string accid, string sYear, string sDate)
         {
 
             U8Login.clsLoginClass m_ologin = new U8Login.clsLoginClass();
@@ -30,20 +30,19 @@ namespace QTU8interface.UFIDA
                 {
                     return null;
                 }
-                string sYear = "";
-                //string sPeriod = "";
-                string sDate = "";
-                if (accid == "999")
+                if ((sYear == "") && (sDate == ""))
                 {
-                    sYear = "2015";
-                    sDate = "2015-01-01";
+                    if (accid == "999")
+                    {
+                        sYear = "2015";
+                        sDate = "2015-01-01";
+                    }
+                    else
+                    {
+                        sYear = DateTime.Now.Year.ToString();
+                        sDate = DateTime.Now.ToShortDateString();
+                    }
                 }
-                else
-                {
-                    sYear = DateTime.Now.Year.ToString();
-                    sDate = DateTime.Now.ToShortDateString();
-                }
-
                 if (!m_ologin.Login("AA", accid, sYear, user, password, sDate, server, ""))
                 {
                     return null;                    

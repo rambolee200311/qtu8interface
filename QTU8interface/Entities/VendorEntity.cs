@@ -21,7 +21,7 @@ namespace QTU8interface.Entities
             try
             {
                 xmlDoc.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\vendor.xml");
-                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(cust.ztcode.ToString());
+                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(cust.ztcode.ToString(), "", "");
                 if (u8login == null)
                 {
                     re.recode = "111";

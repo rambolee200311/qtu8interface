@@ -39,7 +39,7 @@ namespace QTU8interface.Entities
                 
                 xmlDoc.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\voucherconfig.xml");
                 LogHelper.WriteLog(typeof(ExpenseVouchEntity), "start login");
-                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(expense.ztcode.ToString());
+                U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(expense.ztcode.ToString(), "", "");
                 LogHelper.WriteLog(typeof(ExpenseVouchEntity), "finish login");
                 if (u8login==null)
                 {

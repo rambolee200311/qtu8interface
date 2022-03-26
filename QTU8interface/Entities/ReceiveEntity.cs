@@ -29,7 +29,7 @@ namespace QTU8interface.Entities
             MSXML2.IXMLDOMDocument2 domHead = new MSXML2.DOMDocument30Class();
             MSXML2.IXMLDOMDocument2 domBody = new MSXML2.DOMDocument30Class();
 
-            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(pay.ztcode.ToString());
+            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(pay.ztcode.ToString(), "", "");
             if (u8login == null)
             {
                 re.recode = "111";

@@ -20,17 +20,17 @@ namespace QTU8interface.Controllers
             ClsReceivable receivable = new ClsReceivable();
             receivable.ztcode = "996";
             receivable.head = new Receivable_Head();
-            receivable.head.oacode = "YSD476473";
-            receivable.head.ddate = Convert.ToDateTime("2020-12-15");
-            receivable.head.person = "张福";
-            receivable.head.customer = "广东欧珀移动通信有限公司";
-            receivable.head.projname = "腾讯AA项目";
+            receivable.head.oacode = "YSD202203260001";
+            receivable.head.ddate = Convert.ToDateTime("2021-01-31");
+            receivable.head.person = "潘倩倩";
+            receivable.head.customer = "北京墨迹风云科技股份有限公司";
+            receivable.head.projname = "聚好看-容器-500";
 
             receivable.body = new List<Receivable_Body>();
             Receivable_Body body1 = new Receivable_Body();
             body1.rowno = 1;
-            body1.amount = 1010;
-            body1.tax = 10;
+            body1.amount = 1300;
+            body1.tax = 300;
             receivable.body.Add(body1);
             Receivable_Body body2 = new Receivable_Body();
             body2.rowno = 2;
@@ -55,7 +55,7 @@ namespace QTU8interface.Controllers
             re.ztcode = receivable.ztcode;
             re.oacode = receivable.head.oacode;
             //PayableEntity.Add_Payable(payable, ref re);
-            ReceivableEntity.Add_Payable(receivable, ref re);
+            ReceivableEntity.Add_Receivable(receivable, ref re);
             //re.u8code = "08709709";
             //re.recode = "0";
             //re.remsg = "";

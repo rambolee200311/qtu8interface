@@ -18,7 +18,7 @@ namespace QTU8interface
         private string getARvouch()
         {
             string result = "";
-            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity("996");
+            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity("996", "", "");
             ADODB.Connection conn = new ADODB.Connection();
             conn.Open(u8login.UfDbName);
             bool bTran = false;
@@ -46,7 +46,7 @@ namespace QTU8interface
             string result = "";
             int vtid = 8054;
             bool bTran=false;
-            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity("996");
+            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity("996", "", "");
             ADODB.Connection conn=new ADODB.Connection();
             conn.Open(u8login.UfDbName);
             //UFAPBO.clsVouchFacadeClass vfc = new UFAPBO.clsVouchFacadeClass();
