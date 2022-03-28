@@ -335,12 +335,13 @@ namespace QTU8interface.Entities
             if (bTran)
             {
                 String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='R0' and coutid='"+vouchID+"'");
+                String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='R0' and coutid='" + vouchID + "'");
                 String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
-                strSql = "update ap_vouch set cPzId='AR" + vouchID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
+                strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
                 LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
 
-                strSql = " update Ar_Detail set ccode='112201',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='其他应收单',cPZid='AR" + vouchID+"' where cVouchID='"+vouchID+"' and cVouchType='R0' and cCoVouchID='"+vouchID+"' and cCoVouchType='R0'";
+                strSql = " update Ar_Detail set ccode='112201',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='其他应收单',cPZid='" + cpzID+"' where cVouchID='"+vouchID+"' and cVouchType='R0' and cCoVouchID='"+vouchID+"' and cCoVouchType='R0'";
                 LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
             }

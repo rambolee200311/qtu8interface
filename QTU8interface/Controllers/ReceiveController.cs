@@ -20,11 +20,11 @@ namespace QTU8interface.Controllers
             ClsReceive pay = new ClsReceive();
             pay.ztcode = "996";
             pay.head = new Receive_Head();
-            pay.head.oacode = "SKD8708709";
-            pay.head.ddate = Convert.ToDateTime("2020-12-15");
-            pay.head.person = "张福";
-            pay.head.customer = "广东欧珀移动通信有限公司";
-            pay.head.projname = "腾讯AA项目";
+            pay.head.oacode = "SKD202201310001";
+            pay.head.ddate = Convert.ToDateTime("2021-01-31");
+            pay.head.person = "马文涛";
+            pay.head.customer = "北京墨迹风云科技股份有限公司";
+            pay.head.projname = "应急管理中心-万相高级版-100";
 
             pay.body = new List<Receive_Body>();
             Receive_Body body1 = new Receive_Body();
