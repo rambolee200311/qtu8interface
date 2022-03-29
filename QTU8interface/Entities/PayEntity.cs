@@ -5,7 +5,7 @@ using System.Web;
 using QTU8interface.UFIDA;
 using QTU8interface.Models.Pay;
 using QTU8interface.Models.Result;
-
+using System.Data;
 namespace QTU8interface.Entities
 {
     public class PayEntity
@@ -25,13 +25,15 @@ namespace QTU8interface.Entities
             decimal tax = 0m;
             decimal money = 0m;
             decimal taxrate = 0m;
+            string vouchID = "";
+            string cLink = "";
             bool bTran = false;
 
             //LogHelper.WriteLog(typeof(PayEntity), "msxml2 start");
             MSXML2.IXMLDOMDocument2 domHead = new MSXML2.DOMDocument30Class();
             MSXML2.IXMLDOMDocument2 domBody = new MSXML2.DOMDocument30Class();
             //LogHelper.WriteLog(typeof(PayEntity), "u8login start");
-            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(pay.ztcode.ToString(), "", "");
+            U8Login.clsLogin u8login = LoginHelper.getU8LoginEntity(pay.ztcode.ToString(), pay.head.ddate.Year.ToString(), pay.head.ddate.ToShortDateString());
             if (u8login == null)
             {
                 re.recode = "111";
@@ -164,15 +166,35 @@ namespace QTU8interface.Entities
 
                 #endregion
 
-                LogHelper.WriteLog(typeof(PayEntity), "netcwapi start");
+                //LogHelper.WriteLog(typeof(PayEntity), "netcwapi start");
+                /*
                 NetCWAPI.U8NetCWAPIClass uncw = new NetCWAPI.U8NetCWAPIClass();
                 uncw.NetCWToVBAdd(u8login.userToken, conn, "SaveVouch", "付款单", domHead.xml, domBody.xml, ref bTran, ref strResult);
-                LogHelper.WriteLog(typeof(PayEntity), "netcwapi result");
-                if (string.IsNullOrEmpty(strResult))
+                */
+                UFAPBO.clsVouchFacade myVouch = new UFAPBO.clsVouchFacade();
+                object oSource = Type.Missing;
+                myVouch.Init("收款单", u8login, conn, "AP");
+                bTran = true;
+                bTran = myVouch.SaveVouch(domHead, domBody, ref strResult, bTran);
+                //LogHelper.WriteLog(typeof(PayEntity), "netcwapi result");
+                //if (string.IsNullOrEmpty(strResult))
+                if (bTran)
                 {
                     re.recode = "0";
                     re.remsg = "";
-                    re.u8code = DBhelper.getDataFromSql(u8login.UfDbName, "select cvouchid from ap_closebill where cdefine11='" + pay.head.oacode + "'");
+                    vouchID = DBhelper.getDataFromSql(u8login.UfDbName, "select cvouchid from ap_closebill where cdefine11='" + pay.head.oacode + "' and cVouchType='49'");
+                    cLink = DBhelper.getDataFromSql(u8login.UfDbName, "select iID from ap_closebill where cdefine11='" + pay.head.oacode + "' and cVouchType='49'");
+                    DBhelper.setDataFromSql(u8login.UfDbName, "update ap_closebill set iperiod=" + pay.head.ddate.Month.ToString() + " where iID=" + cLink + " and cVouchType='49'");
+                    re.u8code = vouchID;
+                    re.u8code = vouchID;
+                    #region//verify vouch
+                    bTran = Verify(u8login, conn, vouchID, cLink);
+
+                    if (bTran)
+                    {
+                        bTran = MakeVouch(u8login, conn, vouchID, cLink, pay.head.ddate);
+                    }
+                    #endregion
                     return;
                 }
                 else
@@ -198,6 +220,144 @@ namespace QTU8interface.Entities
                     conn.Close();
                 }
             }
+        }
+        /*
+        * 20220329自动审核单据
+        */
+        private static bool Verify(U8Login.clsLogin u8login, ADODB.Connection conn, string vouchID, string cLink)
+        {
+            bool bTran = true;
+            string strResult = "";
+            UFAPBO.clsCloseBill myClsVouch1 = new UFAPBO.clsCloseBill();
+            //UFAPBO.clsAPVouch myClsVouch1 = new UFAPBO.clsAPVouch();
+            myClsVouch1.Init(u8login, conn);//, "AR");
+            MSXML2.DOMDocument40 oDom = new MSXML2.DOMDocument40();
+            oDom.loadXML("<condition/>");
+            MSXML2.IXMLDOMElement oElm = oDom.documentElement;
+            //oElm.setAttribute("cLinkFld","iID");
+            oElm.setAttribute("iID", cLink);
+            oElm.setAttribute("cVouchID", vouchID);
+            oElm.setAttribute("cVouchType", "49");
+            oElm.setAttribute("type", 0);
+            oElm.setAttribute("bFirst", false);
+            oElm.setAttribute("cFlag", "AP");
+            bTran = myClsVouch1.Sign(oElm.xml, ref strResult);
+            if (!bTran)
+            {
+                LogHelper.WriteLog(typeof(PayEntity), "verify error:" + strResult);
+            }
+
+            return bTran;
+        }
+        /*
+         * 20200329 生成凭证
+         */
+        private static bool MakeVouch(U8Login.clsLogin u8login, ADODB.Connection conn, string vouchID, string cLink, DateTime ddate)
+        {
+            bool bTran = true;
+            string strGuid = Guid.NewGuid().ToString("N");
+            string strSql = "";
+            string Year = "";//年
+            string Month = "";//月
+            string Date = "";//日
+            object objOut = null;
+            string ccode = "";
+            //2 创建组件
+            CVoucher.CVInterface obj = new CVoucher.CVInterface();
+            //3 创建临时表
+            Date = Convert.ToDateTime(ddate).ToShortDateString();
+            Month = Convert.ToDateTime(ddate).Month.ToString();
+            Year = Convert.ToDateTime(ddate).Year.ToString();
+            obj.strTempTable = "tempdb..cus_gl_accvouch_" + strGuid;
+            strSql = "CREATE TABLE " + obj.strTempTable + " "
+                    + "(csign nvarchar(28),ino_id smallint, "
+                    + "inid smallint, cbill nvarchar(80), doutbilldate DATETIME, ccashier nvarchar(80), "
+                    + "idoc smallint default 0, ctext1 nvarchar(50), ctext2 nvarchar(50), cexch_name nvarchar(28), "
+                    + "cdigest nvarchar(120), ccode nvarchar(40), md money default 0, mc money default 0, "
+                    + "md_f money default 0, mc_f money default 0, nfrat float default 0, nd_s float default 0, nc_s float default 0, csettle nvarchar(23), "
+                    + "cn_id nvarchar(30), dt_date DATETIME, cdept_id nvarchar(12), cperson_id nvarchar(80), csup_id nvarchar(80), ccus_id nvarchar (20), "
+                    + "citem_id nvarchar(80), citem_class nvarchar(22), cname nvarchar(40), ccode_equal nvarchar(50), "
+                    + "bvouchedit bit default 0, bvouchaddordele bit default 0, bvouchmoneyhold bit default 0, bvalueedit bit default 0, bcodeedit bit default 0, ccodecontrol nvarchar(50), bPCSedit bit default 0, bDeptedit bit default 0, bItemedit bit default 0, bCusSupInput bit default 0, "
+                    + "coutaccset nvarchar(23), ioutyear smallint, coutsysname nvarchar(50) NOT NULL, coutsysver nvarchar(50), ioutperiod tinyint NOT NULL, coutsign nvarchar(80) NOT NULL, coutno_id nvarchar(100) NOT NULL, doutdate DATETIME, coutbillsign nvarchar(80), coutid nvarchar(50), iflag tinyint"
+                    + ",iBG_ControlResult smallint null,daudit_date DateTime NULL,cblueoutno_id nvarchar(50) NULL,bWH_BgFlag bit,cDefine1 nvarchar(40),"
+                    + "cDefine2 nvarchar(40),cDefine3 nvarchar(40),cDefine4 DateTime,cDefine5 int,cDefine6 DateTime,cDefine7 Float,cDefine8 nvarchar(4),cDefine9 nvarchar(8),"
+                    + "cDefine10 nvarchar(60),cDefine11 nvarchar(120),cDefine12 nvarchar(120),cDefine13 nvarchar(120),cDefine14 nvarchar(120),cDefine15 int,cDefine16 float)";
+            conn.Execute(strSql, out objOut);
+            int iRow = 1;
+
+
+
+            DataTable dtHead = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_closebill where iID='" + cLink + "'");
+            DataRow drHead = dtHead.Rows[0];
+
+            #region//借方
+            DataTable dtBody = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_closebills where iID='" + cLink + "'");
+
+            foreach (DataRow drBody in dtBody.Rows)
+            {
+                //无税金额
+                ccode = "220299";
+                strSql = "insert into " + obj.strTempTable
+                + "(ioutperiod,csup_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  values("
+                + Month + ",'" + drHead["cDwCode"].ToString() + "','49','" + vouchID + "','记','记','付款单','AP" + vouchID + "','AP','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iAmt"].ToString()
+                + ",'" + drBody["cDepCode"].ToString() + "','','','" + drBody["cPersonCode"].ToString() + "')";
+                LogHelper.WriteLog(typeof(PayEntity), "glaccvouch:" + strSql);
+                conn.Execute(strSql, out objOut);
+                iRow++;
+                /*
+                //税额
+                if (Convert.ToDecimal(drBody["iTax"]) != 0)
+                {
+                    ccode = "2221010201";
+                    strSql = "insert into " + obj.strTempTable
+                    + "(ioutperiod,csup_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
+                    + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','付款单','AP" + vouchID + "','AP','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iTax"].ToString()
+                    + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "')";
+                    LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
+                    conn.Execute(strSql, out objOut);
+                    iRow++;
+                }
+                */
+            }
+            #endregion
+
+            #region//贷方
+            
+            //无税金额
+            ccode = "1002010101";
+            strSql = "insert into " + obj.strTempTable
+            + "(ioutperiod,csup_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
+            + Month + ",'" + drHead["cDwCode"].ToString() + "','49','" + vouchID + "','记','记','付款单','AP" + vouchID + "','AP','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drHead["iAmount"].ToString()
+            + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "')";
+            LogHelper.WriteLog(typeof(PayEntity), "glaccvouch:" + strSql);
+            conn.Execute(strSql, out objOut);
+            iRow++;
+            #endregion
+            obj.set_Connection(conn);
+            obj.LoginByUserToken(u8login.userToken);
+            bTran = obj.SaveVoucher();
+            if (bTran)
+            {
+                String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='49' and coutid='" + vouchID + "'");
+                String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='49' and coutid='" + vouchID + "'");
+                String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
+                strSql = "update ap_closebill set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where iID='" + cLink + "'";
+                LogHelper.WriteLog(typeof(PayEntity), "apvouch:" + strSql);
+                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+
+                strSql = " update Ap_Detail set ccode='220299',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='付款单',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='49' and cCoVouchID='" + vouchID + "' and cCoVouchType='49' and iflag=0";
+                LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
+                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+                strSql = " update Ap_Detail set ccode='1002010101',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='付款单',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='49' and cCoVouchID='" + vouchID + "' and cCoVouchType='49' and iflag!=0";
+                LogHelper.WriteLog(typeof(PayEntity), "apvouch:" + strSql);
+                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+            }
+            else
+            {
+                LogHelper.WriteLog(typeof(PayEntity), "apvouch:" + obj.strErrMessage.ToString());
+            }
+
+            return bTran;
         }
     }
 }

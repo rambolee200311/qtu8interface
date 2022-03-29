@@ -20,11 +20,11 @@ namespace QTU8interface.Controllers
             ClsPayable payable = new ClsPayable();
             payable.ztcode = "996";
             payable.head = new Payable_Head();
-            payable.head.oacode = "YFD8708709";
-            payable.head.ddate = Convert.ToDateTime("2020-12-15");
-            payable.head.person = "张福";
-            payable.head.vendor = "北京凝丰科技有限公司";
-            payable.head.projname = "腾讯AA项目";
+            payable.head.oacode = "YFD202101310001";
+            payable.head.ddate = Convert.ToDateTime("2021-01-31");
+            payable.head.person = "张娜";
+            payable.head.vendor = "北京冠众科技有限公司";
+            payable.head.projname = "心动网络-万相-2000";
 
             payable.body = new List<Payable_Body>();
             Payable_Body body1 = new Payable_Body();

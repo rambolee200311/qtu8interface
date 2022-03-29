@@ -20,11 +20,11 @@ namespace QTU8interface.Controllers
             ClsPay pay = new ClsPay();
             pay.ztcode = "996";
             pay.head = new Pay_Head();
-            pay.head.oacode = "FKD8708709";
-            pay.head.ddate = Convert.ToDateTime("2020-12-15");
-            pay.head.person = "张福";
-            pay.head.vendor = "北京凝丰科技有限公司";
-            pay.head.projname = "腾讯AA项目";
+            pay.head.oacode = "FKD202101310001";
+            pay.head.ddate = Convert.ToDateTime("2021-01-31");
+            pay.head.person = "张娜";
+            pay.head.vendor = "北京冠众科技有限公司";
+            pay.head.projname = "心动网络-万相-2000";
 
             pay.body = new List<Pay_Body>();
             Pay_Body body1 = new Pay_Body();
