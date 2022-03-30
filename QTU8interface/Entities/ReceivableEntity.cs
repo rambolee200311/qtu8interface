@@ -140,7 +140,10 @@ namespace QTU8interface.Entities
                     { xnnodeclone.attributes.getNamedItem("cDefine28").text = body.ywy.ToString(); }//业务员	表体自定义项7
                     if (!string.IsNullOrEmpty(body.lcbh))
                     { xnnodeclone.attributes.getNamedItem("cDefine29").text = body.lcbh.ToString(); }//流程编号	表体自定义项8
-
+                    if (!string.IsNullOrEmpty(body.kplb))
+                    { xnnodeclone.attributes.getNamedItem("cDefine30").text = body.kplb.ToString(); }//开票类别	表体自定义项9
+                    if (!string.IsNullOrEmpty(body.kpnr))
+                    { xnnodeclone.attributes.getNamedItem("cDefine31").text = body.kpnr.ToString(); }//开票内容	表体自定义项10
 
                     domBody.selectSingleNode("xml").selectSingleNode("rs:data").appendChild(xnnodeclone);
 
@@ -191,7 +194,7 @@ namespace QTU8interface.Entities
                     bTran = Verify(u8login, conn, vouchID, cLink);
                     if (bTran)
                     {
-                        bTran = MakeVouch(u8login, conn, vouchID, cLink, payable.head.ddate);
+                        bTran = MakeVouch(u8login, conn, vouchID, cLink, payable.head.ddate,payable);
                     }
                     #endregion
 
@@ -249,7 +252,7 @@ namespace QTU8interface.Entities
         /*
          * 20200326 生成凭证
          */
-        private static bool MakeVouch(U8Login.clsLogin u8login, ADODB.Connection conn, string vouchID, string cLink, DateTime ddate)
+        private static bool MakeVouch(U8Login.clsLogin u8login, ADODB.Connection conn, string vouchID, string cLink, DateTime ddate,ClsReceivable payable)
         {
             bool bTran = true;
             string strGuid = Guid.NewGuid().ToString("N");
@@ -282,27 +285,46 @@ namespace QTU8interface.Entities
             conn.Execute(strSql, out objOut);
             int iRow = 1;
 
-            
-
-            #region//借方
+            String cDigest = payable.head.customer + "开票 " + payable.head.oacode;
             DataTable dtHead = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_vouch where clink='" + cLink + "'");
+            DataTable dtBody = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_vouchs where clink='" + cLink + "'");
+            Decimal sumTax = 0m;
             DataRow drHead = dtHead.Rows[0];
-            //无税金额
-            ccode = "112201";
-            strSql = "insert into " + obj.strTempTable
-            + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  values("
-            + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','其他应收单','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drHead["iAmount"].ToString()
-            + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "')";
-            LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
-            conn.Execute(strSql, out objOut);
-            iRow++;
+            string codeKzkm = "";
+
+            foreach (DataRow drBody in dtBody.Rows)
+            { sumTax += Convert.ToDecimal(drBody["iTax"]); }
+            #region//借方
+            if (sumTax != 0)
+            {                
+                //无税金额
+                //ccode = "112201";                
+                CodeResult crKzkm = ARAPCodeEntity.getKzkm(payable.ztcode);
+                if (crKzkm != null)
+                {
+                    if (crKzkm.recode != "")
+                    {
+                        codeKzkm = crKzkm.recode;
+                    }
+                }
+                strSql = "insert into " + obj.strTempTable
+                + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  values("
+                + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + codeKzkm + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1,"
+                    //+ drHead["iAmount"].ToString()
+                + sumTax.ToString()
+                + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "')";
+                LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
+                conn.Execute(strSql, out objOut);
+                iRow++;
+            }
             #endregion
 
             #region//贷方
-            DataTable dtBody = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_vouchs where clink='" + cLink + "'");
-
+            
+            
             foreach (DataRow drBody in dtBody.Rows)
             {
+                /*
                 //无税金额
                 ccode = "60010101";
                 strSql = "insert into " + obj.strTempTable
@@ -312,15 +334,25 @@ namespace QTU8interface.Entities
                 LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
                 conn.Execute(strSql, out objOut);
                 iRow++;
+                 */
                 //税额
                 if (Convert.ToDecimal(drBody["iTax"]) != 0)
                 {
-                    ccode = "2221010201";
+                    CodeResult crXssjkm = ARAPCodeEntity.getXssjkm(payable.ztcode,drBody["cDefine30"].ToString());
+                    if (crXssjkm!=null)
+                    {
+                        if (crXssjkm.recode!="")
+                        {
+                            ccode = crXssjkm.recode;
+                        }
+                    }
+
                     strSql = "insert into " + obj.strTempTable
                     + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
-                    + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','其他应收单','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iTax"].ToString()
+                    + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iTax"].ToString()
                     + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "')";
                     LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
+                    //sumTax += Convert.ToDecimal(drBody["iTax"]);
                     conn.Execute(strSql, out objOut);
                     iRow++;
                 }
@@ -328,28 +360,29 @@ namespace QTU8interface.Entities
             }
             #endregion
 
-
-            obj.set_Connection(conn);
-            obj.LoginByUserToken(u8login.userToken);
-            bTran = obj.SaveVoucher();
-            if (bTran)
+            if (sumTax != 0)
             {
-                String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='R0' and coutid='"+vouchID+"'");
-                String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='R0' and coutid='" + vouchID + "'");
-                String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
-                strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
-                LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
-                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+                obj.set_Connection(conn);
+                obj.LoginByUserToken(u8login.userToken);
+                bTran = obj.SaveVoucher();
+                if (bTran)
+                {
+                    String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='R0' and coutid='" + vouchID + "'");
+                    String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='R0' and coutid='" + vouchID + "'");
+                    String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
+                    strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
+                    LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
+                    DBhelper.setDataFromSql(u8login.UfDbName, strSql);
 
-                strSql = " update Ar_Detail set ccode='112201',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='其他应收单',cPZid='" + cpzID+"' where cVouchID='"+vouchID+"' and cVouchType='R0' and cCoVouchID='"+vouchID+"' and cCoVouchType='R0'";
-                LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
-                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+                    strSql = " update Ar_Detail set ccode='" + codeKzkm + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='R0' and cCoVouchID='" + vouchID + "' and cCoVouchType='R0'";
+                    LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
+                    DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+                }
+                else
+                {
+                    LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + obj.strErrMessage.ToString());
+                }
             }
-            else
-            {
-                LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" +obj.strErrMessage.ToString());
-            }
-           
             return bTran;
         }
     }

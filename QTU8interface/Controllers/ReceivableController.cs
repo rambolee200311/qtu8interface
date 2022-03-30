@@ -20,7 +20,7 @@ namespace QTU8interface.Controllers
             ClsReceivable receivable = new ClsReceivable();
             receivable.ztcode = "996";
             receivable.head = new Receivable_Head();
-            receivable.head.oacode = "YSD202203260001";
+            receivable.head.oacode = "YSD202203260021";
             receivable.head.ddate = Convert.ToDateTime("2021-01-31");
             receivable.head.person = "潘倩倩";
             receivable.head.customer = "北京墨迹风云科技股份有限公司";
@@ -31,11 +31,13 @@ namespace QTU8interface.Controllers
             body1.rowno = 1;
             body1.amount = 1300;
             body1.tax = 300;
+            body1.kplb = "产品类";
             receivable.body.Add(body1);
             Receivable_Body body2 = new Receivable_Body();
             body2.rowno = 2;
             body2.amount = 150;
             body2.tax = 0;
+            body2.kplb = "其他类";
             receivable.body.Add(body2);
 
             return receivable;

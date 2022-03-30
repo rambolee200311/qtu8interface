@@ -128,6 +128,28 @@
       <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
       <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
     </deptype>
+    <arcodes dsc="应收会计科目">
+      <arcode type="kzkm" ccode="112201" cashitem="01" dsc="应收科目"/>
+      <arcode type="xssrkm" ccode="60010101" dsc="销售收入科目"/>
+      <arcode type="xssjkm" ccode="2221010202" dsc="销项税金科目">
+        <xssjkm kplb="产品类"  ccode="2221010201"/>
+        <xssjkm kplb="default"  ccode="2221010202"/>
+      </arcode>
+    </arcodes>
+    <apcodes dsc="应付会计科目">
+      <apcode type="kzkm" ccode="220299" cashitem="01" dsc="应付科目">
+        <kzkm yffl="房租款" ccode="220201"/>
+        <kzkm yffl="IT设备" ccode="220202"/>
+        <kzkm yffl="办公费" ccode="220203"/>
+        <kzkm yffl="市场费用" ccode="220204"/>
+        <kzkm yffl="招投标费用" ccode="220205"/>
+        <kzkm yffl="项目类（第三方采购申请）" ccode="220206"/>
+        <kzkm yffl="护网专项" ccode="220207"/>
+        <kzkm yffl="其他" ccode="220299"/>
+      </apcode>
+      <apcode type="cgkm" ccode="140501" dsc="采购过渡科目"/>
+      <apcode type="cgsjkm" ccode="2221010101" dsc="进项税金科目"/>
+    </apcodes>
 	</company>
 	<company code="010" name="北京雨福网络科技有限公司">
 		<expensecode type="管理部门">

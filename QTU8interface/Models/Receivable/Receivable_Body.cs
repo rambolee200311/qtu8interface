@@ -20,5 +20,7 @@ namespace QTU8interface.Models.Receivable
         public string sqr { get; set; }//申请人
         public string ywy { get; set; }//业务员
         public string lcbh { get; set; }//流程编号
+        public string kplb { get; set; }//开票类别
+        public string kpnr { get; set; }//开票内容
     }
 }

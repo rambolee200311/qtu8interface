@@ -180,6 +180,7 @@
     <Compile Include="Controllers\RepayLoanController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
+    <Compile Include="Entities\ARAPCodeEntity.cs" />
     <Compile Include="Entities\CodeResult.cs" />
     <Compile Include="Entities\CustomerEntity.cs" />
     <Compile Include="Entities\ExpenseCodeEntity.cs" />
