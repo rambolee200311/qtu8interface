@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root iperiod="0" isignseq="0" ino_id="0">
+  <rows>
+    <row key="26d84745-1a41-49ad-a283-0edada661fc2" RowGuid="26d84745-1a41-49ad-a283-0edada661fc2" iPeriod="3" iSignSeq="1" csign="记" iNo_id="0" iYear="2020" inid="1"
+         cCashItem="01"  md="999" mc="0" ccode="100201"  md_f="0" mc_f="0" nd_s="0" nc_s="0" cdept_id="" cperson_id="" ccus_id="" csup_id="" citem_class="" citem_id=""
+         dbill_date="2020-3-27 0:00:00" iRow="1" cdigest="物业通收款"
+         cDefine1="" cDefine2="" cDefine3="" cDefine4="" cDefine5="" cDefine6="" cDefine7="" cDefine8="" cDefine9="" cDefine10="" cDefine11="" cDefine12="" cDefine13="" cDefine14="" cDefine15="" cDefine16=""
+         iYPeriod="202003" cexch_name=""/>
+  </rows>
+</root>

@@ -20,23 +20,22 @@ namespace QTU8interface.Controllers
             ClsPay pay = new ClsPay();
             pay.ztcode = "996";
             pay.head = new Pay_Head();
-            pay.head.oacode = "FKD202101310001";
+            pay.head.oacode = "FKD202101310031";
             pay.head.ddate = Convert.ToDateTime("2021-01-31");
             pay.head.person = "张娜";
             pay.head.vendor = "北京冠众科技有限公司";
             pay.head.projname = "心动网络-万相-2000";
-
+            pay.head.accountcode = "601369199";
             pay.body = new List<Pay_Body>();
             Pay_Body body1 = new Pay_Body();
             body1.rowno = 1;
-            body1.amount = 100;
+            body1.amount = 1000;
             body1.tax = 10;
+            body1.person = "张娜";
+            body1.yjkm = "办公费";
+            body1.ejkm = "办公用品";
             pay.body.Add(body1);
-            Pay_Body body2 = new Pay_Body();
-            body2.rowno = 2;
-            body2.amount = 150;
-            body2.tax = 0;
-            pay.body.Add(body2);
+            
 
             return pay;
         }

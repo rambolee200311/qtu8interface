@@ -9,5 +9,8 @@ namespace QTU8interface.Entities
     {
         public string remsg { get; set; }
         public string recode { get; set; }
+        public string itemClass { get; set; }
+        public string midcode { get; set; }
+        public string cashitemcode { get; set; }
     }
 }

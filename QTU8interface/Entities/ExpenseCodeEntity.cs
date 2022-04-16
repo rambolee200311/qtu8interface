@@ -14,6 +14,7 @@ namespace QTU8interface.Entities
         public static CodeResult getExpenseCode(string ztcode, string person, string bgcode, string prodname, string projname, U8Login.clsLogin u8login, ref string itemclass, ref string itemcode)
         {
             string expensecode = "";
+            string cashitemcode = "";
             string deptype = "";
             string depname = "";
             CodeResult result=new CodeResult();
@@ -56,9 +57,20 @@ namespace QTU8interface.Entities
                 }
                 //特殊部门处理
                 expensecode = xmlNo.Attributes["u8code"].Value;
+                if (xmlNo.Attributes["cashitemcode"] != null)
+                {
+                    cashitemcode = xmlNo.Attributes["cashitemcode"].Value;
+                }
                 xmlNo = xmlDoc.SelectSingleNode("ufinterface/company[@code='" + ztcode + "']/expensecode[@type='" + deptype + "']/code[@bgcode='" + bgcode + "' and @depname='"+depname+"']");
                 if (xmlNo != null)
-                { expensecode = xmlNo.Attributes["u8code"].Value; }
+                { 
+                    expensecode = xmlNo.Attributes["u8code"].Value;
+                    if (xmlNo.Attributes["cashitemcode"] != null)
+                    {
+                        cashitemcode = xmlNo.Attributes["cashitemcode"].Value;
+                    }
+                
+                }
                 //else
                 //{
                 //    result.remsg = bgcode + "预算科目 "+depname+" 部门类型未设置对应会计科目";
@@ -67,6 +79,7 @@ namespace QTU8interface.Entities
                 //}
                 result.remsg = "";
                 result.recode = expensecode;
+                result.cashitemcode = cashitemcode;
                 //itemclass itemcode
                 itemclass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + expensecode + "' and iyear="+u8login.cIYear);
                 if (!string.IsNullOrEmpty(itemclass))

@@ -2,515 +2,850 @@
 <ufinterface>
 	<company code="996" name="北京升鑫网络科技有限公司">
 		<expensecode type="管理部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
-      <code  bgcode="15" bgname="装修费" u8code="660215" />
-      <code  bgcode="16" bgname="水电费" u8code="660216" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="660221" />
-      <code  bgcode="22" bgname="租赁费" u8code="660222" />
-      <code  bgcode="23" bgname="招聘费" u8code="660223" />
-      <code  bgcode="24" bgname="残保金" u8code="660224" />
-      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660202" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<code  bgcode="05" bgname="职工教育经费" u8code="660205" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"  />
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660209" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660210" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660211" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660214" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660215" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660216" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660217" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660221" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="660222" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="660223" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="660224" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="660225" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="销售部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
-      <code  bgcode="15" bgname="装修费" u8code="660115" />
-      <code  bgcode="16" bgname="水电费" u8code="660116" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660108" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660110" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660111" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660114" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660115" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660116" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660122" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102"  cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="研发部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="5401020399" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="53010122" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="53010115" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待" />
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="53010124" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="53010121" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="53010116" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="53010199" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="53010123" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102"  cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="工程技术部">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="64010407" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="64010408" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="64010404" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="64010405" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660122" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102"  cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<accountcode account="601369199" u8code="1002010101"/>
-		<accountcode account="321130100100421599" u8code="1002010101"/>
-    <accountcode account="127910799510901" u8code="1002010101"/>
+		<accountcode account="321130100100421599" u8code="1002010201"/>
+		<accountcode account="127910799510901" u8code="1002010202"/>
+                                <accountcode account="97600078801200002495" u8code="1002010203"/>
+                                <accountcode account="8110701012902169811" u8code="1002010205"/>
+                                <accountcode account="110945894410506" u8code="1002010104"/>
+                                <accountcode account="127914530510201" u8code="1002010102"/>
 		<otherarcode u8code="122104"/>
-		<taxcode u8code="22210103"/>
-    <!--20210706增加工资福利-->
-    <wagecodes>
-      <wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102"/>
-      <wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105"/>
-      <wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102"/>
-      <wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105"/>
-    </wagecodes>
+		<taxcode u8code="22210103" cashitemcode="06" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		<!--20210706增加工资福利-->
+		<wagecodes>
+			<wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="研发支出--费用化支出--职工福利费" u8code1="53010122" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="研发支出--费用化支出--职工教育经费" u8code1="53010115" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="主营业务成本--其他人员成本--职工福利费" u8code1="64010407" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                
+		</wagecodes>
 		<deptype>
-      <dep type="管理部门" u8code="101" u8name="总裁办"/>
-      <dep type="管理部门" u8code="102" u8name="财务部"/>
-      <dep type="管理部门" u8code="103" u8name="商务部"/>
-      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
-      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
-      <dep type="管理部门" u8code="106" u8name="行政部"/>
-      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
-      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
-      <dep type="销售部门" u8code="114" u8name="市场部"/>
-      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
-      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
-      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
-      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
-      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
-      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
-      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
-      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
-      <dep type="研发部门" u8code="109" u8name="产品部"/>
-      <dep type="研发部门" u8code="110" u8name="技术部"/>
-      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
-      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
-      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
-      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
-      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
-      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
-    </deptype>
-    <arcodes dsc="应收会计科目">
-      <arcode type="kzkm" ccode="112201" cashitem="01" dsc="应收科目"/>
-      <arcode type="xssrkm" ccode="60010101" dsc="销售收入科目"/>
-      <arcode type="xssjkm" ccode="2221010202" dsc="销项税金科目">
-        <xssjkm kplb="产品类"  ccode="2221010201"/>
-        <xssjkm kplb="default"  ccode="2221010202"/>
-      </arcode>
-    </arcodes>
-    <apcodes dsc="应付会计科目">
-      <apcode type="kzkm" ccode="220299" cashitem="01" dsc="应付科目">
-        <kzkm yffl="房租款" ccode="220201"/>
-        <kzkm yffl="IT设备" ccode="220202"/>
-        <kzkm yffl="办公费" ccode="220203"/>
-        <kzkm yffl="市场费用" ccode="220204"/>
-        <kzkm yffl="招投标费用" ccode="220205"/>
-        <kzkm yffl="项目类（第三方采购申请）" ccode="220206"/>
-        <kzkm yffl="护网专项" ccode="220207"/>
-        <kzkm yffl="其他" ccode="220299"/>
-      </apcode>
-      <apcode type="cgkm" ccode="140501" dsc="采购过渡科目"/>
-      <apcode type="cgsjkm" ccode="2221010101" dsc="进项税金科目"/>
-    </apcodes>
+			<dep type="管理部门" u8code="101" u8name="总裁办"/>
+			<dep type="管理部门" u8code="102" u8name="财务部"/>
+			<dep type="管理部门" u8code="103" u8name="商务部"/>
+			<dep type="管理部门" u8code="104" u8name="IT运维组"/>
+			<dep type="管理部门" u8code="105" u8name="人力资源部"/>
+			<dep type="管理部门" u8code="106" u8name="行政部"/>
+			<dep type="销售部门" u8code="113" u8name="客户成功部"/>
+			<dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+			<dep type="销售部门" u8code="114" u8name="市场部"/>
+			<dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+			<dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+			<dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+			<dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+			<dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+			<dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+			<dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+			<dep type="销售部门" u8code="10708" u8name="销售运营"/>
+			<dep type="销售部门" u8code="10709" u8name="销售部"/>
+			<dep type="研发部门" u8code="109" u8name="产品部"/>
+			<dep type="研发部门" u8code="110" u8name="技术部"/>
+			<dep type="研发部门" u8code="111" u8name="安全实验室"/>
+			<dep type="销售部门" u8code="112" u8name="联合研发部"/>
+			<dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+			<dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+			<dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+			<dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+			<dep type="销售部门" u8code="10710" u8name="销售部-容器行销组"/>
+			<dep type="销售部门" u8code="10712" u8name="销售部-行销组"/>
+                                                <dep type="销售部门" u8code="10711" u8name="销售部-售前组"/>
+			<dep type="管理部门" u8code="109" u8name="产品部"/>
+			<dep type="管理部门" u8code="110" u8name="技术部"/>
+			<dep type="工程技术部" u8code="115" u8name="安全交付中心"/>
+                                                <dep type="工程技术部" u8code="11506" u8name="安全交付中心"/>
+			<dep type="销售部门" u8code="11501" u8name="安全交付中心-二线支持组"/>
+			<dep type="工程技术部" u8code="11502" u8name="安全交付中心-华北区"/>
+			<dep type="工程技术部" u8code="11503" u8name="安全交付中心-华东区"/>
+			<dep type="工程技术部" u8code="11504" u8name="安全交付中心-华南区"/>
+			<dep type="销售部门" u8code="11505" u8name="安全交付中心-吴钩实验室"/>
+			<dep type="销售部门" u8code="116" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11601" u8name="全国运营中心-工程运营"/>
+			<dep type="销售部门" u8code="11602" u8name="全国运营中心-销售运营"/>
+			<dep type="管理部门" u8code="117" u8name="资本市场部"/>
+			<dep type="销售部门" u8code="11603" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11506" u8name="全国运营中心"/>
+                                                <dep type="销售部门" u8code="10713" u8name="销售部-北西区与全国金融"/>
+                                                <dep type="销售部门" u8code="10714" u8name="销售部-北西区与全国金融-金融-东区金融"/>
+                                                <dep type="销售部门" u8code="10715" u8name="销售部-北西区与全国金融-金融-北区金融"/>
+                                                <dep type="销售部门" u8code="10716" u8name="销售部-北西区与全国金融-金融-南区金融"/>
+                                                <dep type="销售部门" u8code="10717" u8name="销售部-北西区与全国金融-北西区非金-互联网组"/>
+                                                <dep type="销售部门" u8code="10718" u8name="销售部-北西区与全国金融-北西区非金-北区央企组"/>
+                                                <dep type="销售部门" u8code="10719" u8name="销售部-北西区与全国金融-北西区非金-北区政府大合作业务拓展组"/>
+                                                <dep type="销售部门" u8code="10720" u8name="销售部-北西区与全国金融-北西区非金-西区"/>
+                                                <dep type="销售部门" u8code="10721" u8name="销售部-北西区与全国金融-北西区非金-北区区域组"/>
+                                                <dep type="销售部门" u8code="10722" u8name="销售部-东区非金-东区区域一组"/>
+                                                <dep type="销售部门" u8code="10723" u8name="销售部-东区非金-东区区域二组"/>
+                                                <dep type="销售部门" u8code="10724" u8name="销售部-南区非金-广东商企组"/>
+                                                <dep type="销售部门" u8code="10725" u8name="销售部-南区非金"/>
+                                                <dep type="销售部门" u8code="10726" u8name="销售部-运营商国网"/>
+                                                <dep type="销售部门" u8code="10727" u8name="销售部-运营商国网-运营商北区"/>
+                                                <dep type="销售部门" u8code="10728" u8name="销售部-运营商国网-运营商东区"/>
+                                                <dep type="销售部门" u8code="10729" u8name="销售部-运营商国网-国网三峡"/>
+                                                <dep type="销售部门" u8code="10730" u8name="销售部-全国售前-东区售前"/>
+                                                <dep type="销售部门" u8code="10731" u8name="销售部-全国售前-南区售前"/>
+                                                <dep type="销售部门" u8code="10732" u8name="销售部-全国售前-北区售前"/>
+                                                <dep type="销售部门" u8code="10733" u8name="销售部-全国售前-渠道售前"/>
+                                                <dep type="销售部门" u8code="10734" u8name="销售部-战略合作腾讯华为"/>
+                                                <dep type="销售部门" u8code="10735" u8name="销售部-渠道合作"/>
+                                                <dep type="销售部门" u8code="10736" u8name="销售部-运营"/>
+		</deptype>
 	</company>
 	<company code="010" name="北京雨福网络科技有限公司">
 		<expensecode type="管理部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
-      <code  bgcode="15" bgname="装修费" u8code="660215" />
-      <code  bgcode="16" bgname="水电费" u8code="660216" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="660221" />
-      <code  bgcode="22" bgname="租赁费" u8code="660222" />
-      <code  bgcode="23" bgname="招聘费" u8code="660223" />
-      <code  bgcode="24" bgname="残保金" u8code="660224" />
-      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660202" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<code  bgcode="05" bgname="职工教育经费" u8code="660205" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660209" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660210" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660211" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660214" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660215" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660216" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660217" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660221" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="660222" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="660223" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="660224" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="660225" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102"  cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="销售部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
-      <code  bgcode="15" bgname="装修费" u8code="660115" />
-      <code  bgcode="16" bgname="水电费" u8code="660116" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660108" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660110" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660111" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660114" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660115" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660116" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102"  cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="研发部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="53010122" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="53010115" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="53010124" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="53010121" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="53010116" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="53010199" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="53010123" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102"  cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="工程技术部">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="64010407" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="64010408" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="64010404" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="64010405" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660122" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<accountcode account="10285000001449711" u8code="1002010101"/>
+		<accountcode account="110945839610501" u8code="1002010102"/>
 		<otherarcode u8code="122104"/>
 		<taxcode u8code="22210103"/>
+		<!--20210706增加工资福利-->
+		<wagecodes>
+			<wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+		                <wagecode type="研发支出--费用化支出--职工福利费" u8code1="53010122" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="研发支出--费用化支出--职工教育经费" u8code1="53010115" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="主营业务成本--其他人员成本--职工福利费" u8code1="64010407" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                </wagecodes>
 		<deptype>
-      <dep type="管理部门" u8code="101" u8name="总裁办"/>
-      <dep type="管理部门" u8code="102" u8name="财务部"/>
-      <dep type="管理部门" u8code="103" u8name="商务部"/>
-      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
-      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
-      <dep type="管理部门" u8code="106" u8name="行政部"/>
-      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
-      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
-      <dep type="销售部门" u8code="114" u8name="市场部"/>
-      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
-      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
-      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
-      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
-      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
-      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
-      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
-      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
-      <dep type="研发部门" u8code="109" u8name="产品部"/>
-      <dep type="研发部门" u8code="110" u8name="技术部"/>
-      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
-      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
-      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
-      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
-      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
-      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
-    </deptype>
+			<dep type="管理部门" u8code="101" u8name="总裁办"/>
+			<dep type="管理部门" u8code="102" u8name="财务部"/>
+			<dep type="管理部门" u8code="103" u8name="商务部"/>
+			<dep type="管理部门" u8code="104" u8name="IT运维组"/>
+			<dep type="管理部门" u8code="105" u8name="人力资源部"/>
+			<dep type="管理部门" u8code="106" u8name="行政部"/>
+			<dep type="销售部门" u8code="113" u8name="客户成功部"/>
+			<dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+			<dep type="销售部门" u8code="114" u8name="市场部"/>
+			<dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+			<dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+			<dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+			<dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+			<dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+			<dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+			<dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+			<dep type="销售部门" u8code="10709" u8name="销售部"/>
+			<dep type="销售部门" u8code="10708" u8name="销售运营"/>
+			<dep type="研发部门" u8code="109" u8name="产品部"/>
+			<dep type="研发部门" u8code="110" u8name="技术部"/>
+			<dep type="研发部门" u8code="111" u8name="安全实验室"/>
+			<dep type="销售部门" u8code="112" u8name="联合研发部"/>
+			<dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+			<dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+			<dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+			<dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+			<dep type="销售部门" u8code="10710" u8name="销售部-容器行销组"/>
+                                                <dep type="销售部门" u8code="10712" u8name="销售部-行销组"/>
+			<dep type="销售部门" u8code="10711" u8name="销售部-售前组"/>
+			<dep type="管理部门" u8code="109" u8name="产品部"/>
+			<dep type="管理部门" u8code="110" u8name="技术部"/>
+			<dep type="工程技术部" u8code="115" u8name="安全交付中心"/>
+                                                <dep type="工程技术部" u8code="11506" u8name="安全交付中心"/>
+			<dep type="销售部门" u8code="11501" u8name="安全交付中心-二线支持组"/>
+			<dep type="工程技术部" u8code="11502" u8name="安全交付中心-华北区"/>
+			<dep type="工程技术部" u8code="11503" u8name="安全交付中心-华东区"/>
+			<dep type="工程技术部" u8code="11504" u8name="安全交付中心-华南区"/>
+			<dep type="销售部门" u8code="11505" u8name="安全交付中心-吴钩实验室"/>
+			<dep type="销售部门" u8code="116" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11601" u8name="全国运营中心-工程运营"/>
+			<dep type="销售部门" u8code="11602" u8name="全国运营中心-销售运营"/>
+			<dep type="管理部门" u8code="117" u8name="资本市场部"/>
+			<dep type="销售部门" u8code="11603" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11506" u8name="全国运营中心"/>
+                                                <dep type="销售部门" u8code="10713" u8name="销售部-北西区与全国金融"/>
+                                                <dep type="销售部门" u8code="10714" u8name="销售部-北西区与全国金融-金融-东区金融"/>
+                                                <dep type="销售部门" u8code="10715" u8name="销售部-北西区与全国金融-金融-北区金融"/>
+                                                <dep type="销售部门" u8code="10716" u8name="销售部-北西区与全国金融-金融-南区金融"/>
+                                                <dep type="销售部门" u8code="10717" u8name="销售部-北西区与全国金融-北西区非金-互联网组"/>
+                                                <dep type="销售部门" u8code="10718" u8name="销售部-北西区与全国金融-北西区非金-北区央企组"/>
+                                                <dep type="销售部门" u8code="10719" u8name="销售部-北西区与全国金融-北西区非金-北区政府大合作业务拓展组"/>
+                                                <dep type="销售部门" u8code="10720" u8name="销售部-北西区与全国金融-北西区非金-西区"/>
+                                                <dep type="销售部门" u8code="10721" u8name="销售部-北西区与全国金融-北西区非金-北区区域组"/>
+                                                <dep type="销售部门" u8code="10722" u8name="销售部-东区非金-东区区域一组"/>
+                                                <dep type="销售部门" u8code="10723" u8name="销售部-东区非金-东区区域二组"/>
+                                                <dep type="销售部门" u8code="10724" u8name="销售部-南区非金-广东商企组"/>
+                                                <dep type="销售部门" u8code="10725" u8name="销售部-南区非金"/>
+                                                <dep type="销售部门" u8code="10726" u8name="销售部-运营商国网"/>
+                                                <dep type="销售部门" u8code="10727" u8name="销售部-运营商国网-运营商北区"/>
+                                                <dep type="销售部门" u8code="10728" u8name="销售部-运营商国网-运营商东区"/>
+                                                <dep type="销售部门" u8code="10729" u8name="销售部-运营商国网-国网三峡"/>
+                                                <dep type="销售部门" u8code="10730" u8name="销售部-全国售前-东区售前"/>
+                                                <dep type="销售部门" u8code="10731" u8name="销售部-全国售前-南区售前"/>
+                                                <dep type="销售部门" u8code="10732" u8name="销售部-全国售前-北区售前"/>
+                                                <dep type="销售部门" u8code="10733" u8name="销售部-全国售前-渠道售前"/>
+                                                <dep type="销售部门" u8code="10734" u8name="销售部-战略合作腾讯华为"/>
+                                                <dep type="销售部门" u8code="10735" u8name="销售部-渠道合作"/>
+                                                <dep type="销售部门" u8code="10736" u8name="销售部-运营"/>
+		</deptype>
 	</company>
 	<company code="011" name="武汉青藤时代网络科技有限公司">
 		<expensecode type="管理部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
-      <code  bgcode="15" bgname="装修费" u8code="660215" />
-      <code  bgcode="16" bgname="水电费" u8code="660216" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="660221" />
-      <code  bgcode="22" bgname="租赁费" u8code="660222" />
-      <code  bgcode="23" bgname="招聘费" u8code="660223" />
-      <code  bgcode="24" bgname="残保金" u8code="660224" />
-      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660202" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660205" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660209" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660210" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660211" cashitemcode="0701" cashitemname="差旅及招待" />
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660214" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660215" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660216" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660217" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660221" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="660222" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="660223" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="660224" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="660225" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="销售部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
-      <code  bgcode="15" bgname="装修费" u8code="660115" />
-      <code  bgcode="16" bgname="水电费" u8code="660116" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660108" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660110" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660111" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660114" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660115" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660116" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="研发部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="53010122" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="53010115" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="53010124" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="53010121" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="53010116" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="53010199" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="53010123" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="工程技术部">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="64010407" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="64010408" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="64010404" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="64010405" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660122" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<accountcode account="127910793810902" u8code="1002010101"/>
 		<accountcode account="416110100100224416" u8code="1002010201"/>
 		<otherarcode u8code="122104"/>
 		<taxcode u8code="22210103"/>
+		<!--20210706增加工资福利-->
+		<wagecodes>
+			<wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+		                <wagecode type="研发支出--费用化支出--职工福利费" u8code1="53010122" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="研发支出--费用化支出--职工教育经费" u8code1="53010115" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="主营业务成本--其他人员成本--职工福利费" u8code1="64010407" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                </wagecodes>
 		<deptype>
-      <dep type="管理部门" u8code="101" u8name="总裁办"/>
-      <dep type="管理部门" u8code="102" u8name="财务部"/>
-      <dep type="管理部门" u8code="103" u8name="商务部"/>
-      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
-      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
-      <dep type="管理部门" u8code="106" u8name="行政部"/>
-      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
-      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
-      <dep type="销售部门" u8code="114" u8name="市场部"/>
-      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
-      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
-      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
-      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
-      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
-      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
-      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
-      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
-      <dep type="研发部门" u8code="109" u8name="产品部"/>
-      <dep type="研发部门" u8code="110" u8name="技术部"/>
-      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
-      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
-      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
-      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
-      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
-      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
-    </deptype>
+			<dep type="管理部门" u8code="101" u8name="总裁办"/>
+			<dep type="管理部门" u8code="102" u8name="财务部"/>
+			<dep type="管理部门" u8code="103" u8name="商务部"/>
+			<dep type="管理部门" u8code="104" u8name="IT运维组"/>
+			<dep type="管理部门" u8code="105" u8name="人力资源部"/>
+			<dep type="管理部门" u8code="106" u8name="行政部"/>
+			<dep type="销售部门" u8code="113" u8name="客户成功部"/>
+			<dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+			<dep type="销售部门" u8code="114" u8name="市场部"/>
+			<dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+			<dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+			<dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+			<dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+			<dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+			<dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+			<dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+			<dep type="销售部门" u8code="10708" u8name="销售运营"/>
+			<dep type="销售部门" u8code="10709" u8name="销售部"/>
+			<dep type="研发部门" u8code="109" u8name="产品部"/>
+			<dep type="研发部门" u8code="110" u8name="技术部"/>
+			<dep type="研发部门" u8code="111" u8name="安全实验室"/>
+			<dep type="销售部门" u8code="112" u8name="联合研发部"/>
+			<dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+			<dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+			<dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+			<dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+			<dep type="销售部门" u8code="10710" u8name="销售部-容器行销组"/>
+                                                <dep type="销售部门" u8code="10712" u8name="销售部-行销组"/>
+			<dep type="销售部门" u8code="10711" u8name="销售部-售前组"/>
+			<dep type="管理部门" u8code="109" u8name="产品部"/>
+			<dep type="管理部门" u8code="110" u8name="技术部"/>
+			<dep type="工程技术部" u8code="115" u8name="安全交付中心"/>
+                                                <dep type="工程技术部" u8code="11506" u8name="安全交付中心"/>
+			<dep type="销售部门" u8code="11501" u8name="安全交付中心-二线支持组"/>
+			<dep type="工程技术部" u8code="11502" u8name="安全交付中心-华北区"/>
+			<dep type="工程技术部" u8code="11503" u8name="安全交付中心-华东区"/>
+			<dep type="工程技术部" u8code="11504" u8name="安全交付中心-华南区"/>
+			<dep type="销售部门" u8code="11505" u8name="安全交付中心-吴钩实验室"/>
+			<dep type="销售部门" u8code="116" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11601" u8name="全国运营中心-工程运营"/>
+			<dep type="销售部门" u8code="11602" u8name="全国运营中心-销售运营"/>
+			<dep type="管理部门" u8code="117" u8name="资本市场部"/>
+			<dep type="销售部门" u8code="11603" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11506" u8name="全国运营中心"/>
+		</deptype>
 	</company>
 	<company code="012" name="青腾时代（北京）信息科技有限公司">
 		<expensecode type="管理部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660214" />
-      <code  bgcode="15" bgname="装修费" u8code="660215" />
-      <code  bgcode="16" bgname="水电费" u8code="660216" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="660221" />
-      <code  bgcode="22" bgname="租赁费" u8code="660222" />
-      <code  bgcode="23" bgname="招聘费" u8code="660223" />
-      <code  bgcode="24" bgname="残保金" u8code="660224" />
-      <code  bgcode="25" bgname="中介机构费" u8code="660225" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660202" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660205" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660209" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660210" cashitemcode="0701" cashitemname="差旅及招待" />
+			<code  bgcode="11" bgname="交通费" u8code="660211" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660214" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660215" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660216" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660217" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660221" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="660222" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="660223" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="660224" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="660225" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="销售部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="660114" />
-      <code  bgcode="15" bgname="装修费" u8code="660115" />
-      <code  bgcode="16" bgname="水电费" u8code="660116" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="660120" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="660102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660108" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660110" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660111" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660114" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660115" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660116" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="研发部门">
-      <code  bgcode="02" bgname="职工福利费" u8code="660202" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660205" />
-      <code  bgcode="07" bgname="招待费" u8code="660207" />
-      <code  bgcode="08" bgname="办公费" u8code="660208" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660209" />
-      <code  bgcode="10" bgname="差旅费" u8code="660210" />
-      <code  bgcode="11" bgname="交通费" u8code="660211" />
-      <code  bgcode="12" bgname="通讯费" u8code="660212" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660213" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660217" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660299" />
-    </expensecode>
+			<code  bgcode="02" bgname="职工福利费" u8code="53010122" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="53010115" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="53010124" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="53010121" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="53010116" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="53010199" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="53010123" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
 		<expensecode type="工程技术部">
-      <code  bgcode="02" bgname="职工福利费" u8code="660102" />
-      <code  bgcode="05" bgname="职工教育经费" u8code="660105" />
-      <code  bgcode="07" bgname="招待费" u8code="660107" />
-      <code  bgcode="08" bgname="办公费" u8code="660108" />
-      <code  bgcode="09" bgname="IT耗材" u8code="660109" />
-      <code  bgcode="10" bgname="差旅费" u8code="660110" />
-      <code  bgcode="11" bgname="交通费" u8code="660111" />
-      <code  bgcode="12" bgname="通讯费" u8code="660112" />
-      <code  bgcode="13" bgname="市场拓展费" u8code="660113" />
-      <code  bgcode="14" bgname="房租及物业" u8code="" />
-      <code  bgcode="15" bgname="装修费" u8code="" />
-      <code  bgcode="16" bgname="水电费" u8code="" />
-      <code  bgcode="17" bgname="咨询服务费" u8code="660117" />
-      <code  bgcode="20" bgname="招投标费用" u8code="" />
-      <code  bgcode="21" bgname="会务费" u8code="" />
-      <code  bgcode="22" bgname="租赁费" u8code="" />
-      <code  bgcode="23" bgname="招聘费" u8code="" />
-      <code  bgcode="24" bgname="残保金" u8code="" />
-      <code  bgcode="25" bgname="中介机构费" u8code="" />
-      <code  bgcode="99" bgname="其他" u8code="660199" />
-    </expensecode>
-		<accountcode account="110919001310902" u8code="1002010101"/>
+			<code  bgcode="02" bgname="职工福利费" u8code="64010407" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="64010408" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="64010404" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="64010405" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660122" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
+		<accountcode account="110919330810902" u8code="1002010101"/>
 		<accountcode account="110060635018800058706" u8code="1002010201"/>
 		<otherarcode u8code="122104"/>
 		<taxcode u8code="22210103"/>
+		<!--20210706增加工资福利-->
+		<wagecodes>
+			<wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+		                <wagecode type="研发支出--费用化支出--职工福利费" u8code1="53010122" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="研发支出--费用化支出--职工教育经费" u8code1="53010115" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="主营业务成本--其他人员成本--职工福利费" u8code1="64010407" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                </wagecodes>
 		<deptype>
-      <dep type="管理部门" u8code="101" u8name="总裁办"/>
-      <dep type="管理部门" u8code="102" u8name="财务部"/>
-      <dep type="管理部门" u8code="103" u8name="商务部"/>
-      <dep type="管理部门" u8code="104" u8name="IT运维组"/>
-      <dep type="管理部门" u8code="105" u8name="人力资源部"/>
-      <dep type="管理部门" u8code="106" u8name="行政部"/>
-      <dep type="管理部门" u8code="113" u8name="客户成功部"/>
-      <dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
-      <dep type="销售部门" u8code="114" u8name="市场部"/>
-      <dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
-      <dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
-      <dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
-      <dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
-      <dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
-      <dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
-      <dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
-      <dep type="销售部门" u8code="10708" u8name="销售运营"/>
-      <dep type="研发部门" u8code="109" u8name="产品部"/>
-      <dep type="研发部门" u8code="110" u8name="技术部"/>
-      <dep type="研发部门" u8code="111" u8name="安全实验室"/>
-      <dep type="研发部门" u8code="112" u8name="联合研发部"/>
-      <dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
-      <dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
-      <dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
-      <dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
-    </deptype>
+			<dep type="管理部门" u8code="101" u8name="总裁办"/>
+			<dep type="管理部门" u8code="102" u8name="财务部"/>
+			<dep type="管理部门" u8code="103" u8name="商务部"/>
+			<dep type="管理部门" u8code="104" u8name="IT运维组"/>
+			<dep type="管理部门" u8code="105" u8name="人力资源部"/>
+			<dep type="管理部门" u8code="106" u8name="行政部"/>
+			<dep type="销售部门" u8code="113" u8name="客户成功部"/>
+			<dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+			<dep type="销售部门" u8code="114" u8name="市场部"/>
+			<dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+			<dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+			<dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+			<dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+			<dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+			<dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+			<dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+			<dep type="销售部门" u8code="10708" u8name="销售运营"/>
+			<dep type="销售部门" u8code="10709" u8name="销售部"/>
+			<dep type="研发部门" u8code="109" u8name="产品部"/>
+			<dep type="研发部门" u8code="110" u8name="技术部"/>
+			<dep type="研发部门" u8code="111" u8name="安全实验室"/>
+			<dep type="销售部门" u8code="112" u8name="联合研发部"/>
+			<dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+			<dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+			<dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+			<dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+			<dep type="销售部门" u8code="10710" u8name="销售部-容器行销组"/>
+                                                <dep type="销售部门" u8code="10712" u8name="销售部-行销组"/>
+			<dep type="销售部门" u8code="10711" u8name="销售部-售前组"/>
+			<dep type="管理部门" u8code="109" u8name="产品部"/>
+			<dep type="管理部门" u8code="110" u8name="技术部"/>
+			<dep type="工程技术部" u8code="115" u8name="安全交付中心"/>
+                                                <dep type="工程技术部" u8code="11506" u8name="安全交付中心"/>
+			<dep type="销售部门" u8code="11501" u8name="安全交付中心-二线支持组"/>
+			<dep type="工程技术部" u8code="11502" u8name="安全交付中心-华北区"/>
+			<dep type="工程技术部" u8code="11503" u8name="安全交付中心-华东区"/>
+			<dep type="工程技术部" u8code="11504" u8name="安全交付中心-华南区"/>
+			<dep type="销售部门" u8code="11505" u8name="安全交付中心-吴钩实验室"/>
+			<dep type="销售部门" u8code="116" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11601" u8name="全国运营中心-工程运营"/>
+			<dep type="销售部门" u8code="11602" u8name="全国运营中心-销售运营"/>
+			<dep type="管理部门" u8code="117" u8name="资本市场部"/>
+			<dep type="销售部门" u8code="11603" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11506" u8name="全国运营中心"/>
+		</deptype>
+	</company>
+	<company code="017" name="上海雨福网络科技有限公司">
+		<expensecode type="管理部门">
+			<code  bgcode="02" bgname="职工福利费" u8code="660202" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660205" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660209" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660210" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660211" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660214" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660215" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660216" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660217" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660221" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="660222" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="660223" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="660224" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="660225" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
+		<expensecode type="销售部门">
+			<code  bgcode="02" bgname="职工福利费" u8code="660102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660108" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="660110" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="660111" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="660114" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="660115" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="660116" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="66012003" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
+		<expensecode type="研发部门">
+			<code  bgcode="02" bgname="职工福利费" u8code="53010122" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="53010115" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660207" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="660208" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="53010124" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="53010121" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="53010116" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660212" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660213" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="53010199" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="53010123" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660299" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
+		<expensecode type="工程技术部">
+			<code  bgcode="02" bgname="职工福利费" u8code="64010407" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="05" bgname="职工教育经费" u8code="660105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<code  bgcode="07" bgname="招待费" u8code="660107" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="08" bgname="办公费" u8code="64010408" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="09" bgname="IT耗材" u8code="660109" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="10" bgname="差旅费" u8code="64010404" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="11" bgname="交通费" u8code="64010405" cashitemcode="0701" cashitemname="差旅及招待"/>
+			<code  bgcode="12" bgname="通讯费" u8code="660112" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="13" bgname="市场拓展费" u8code="660113" cashitemcode="0708" cashitemname="市场宣传"/>
+			<code  bgcode="14" bgname="房租及物业" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="15" bgname="装修费" u8code="" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="16" bgname="水电费" u8code="" cashitemcode="0704" cashitemname="房租"/>
+			<code  bgcode="17" bgname="咨询服务费" u8code="660117" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="20" bgname="招投标费用" u8code="" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+			<code  bgcode="21" bgname="会务费" u8code="660122" cashitemcode="0707" cashitemname="会务费"/>
+			<code  bgcode="22" bgname="租赁费" u8code="" cashitemcode="0703" cashitemname="租赁费"/>
+			<code  bgcode="23" bgname="招聘费" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="24" bgname="残保金" u8code="" cashitemcode="0709" cashitemname="服务费"/>
+			<code  bgcode="25" bgname="中介机构费" u8code="" cashitemcode="0706" cashitemname="中介机构"/>
+			<code  bgcode="26" bgname="办公设备" u8code="160102" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+			<code  bgcode="99" bgname="其他" u8code="660199" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+		</expensecode>
+		<accountcode account="310066179013001695958" u8code="1002010101"/>
+		
+		<otherarcode u8code="122104"/>
+		<taxcode u8code="22210103"/>
+		<!--20210706增加工资福利-->
+		<wagecodes>
+			<wagecode type="管理费用--职工福利费" u8code1="660202" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="管理费用--职工教育经费" u8code1="660205" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+			<wagecode type="销售费用--职工福利费" u8code1="660102" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+			<wagecode type="销售费用--职工教育经费" u8code1="660105" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+		                <wagecode type="研发支出--费用化支出--职工福利费" u8code1="53010122" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="研发支出--费用化支出--职工教育经费" u8code1="53010115" u8code2="221105" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                                <wagecode type="主营业务成本--其他人员成本--职工福利费" u8code1="64010407" u8code2="221102" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金" />
+                                </wagecodes>
+		<deptype>
+			<dep type="管理部门" u8code="101" u8name="总裁办"/>
+			<dep type="管理部门" u8code="102" u8name="财务部"/>
+			<dep type="管理部门" u8code="103" u8name="商务部"/>
+			<dep type="管理部门" u8code="104" u8name="IT运维组"/>
+			<dep type="管理部门" u8code="105" u8name="人力资源部"/>
+			<dep type="管理部门" u8code="106" u8name="行政部"/>
+			<dep type="销售部门" u8code="113" u8name="客户成功部"/>
+			<dep type="管理部门" u8code="10805" u8name="工程技术部-其他"/>
+			<dep type="销售部门" u8code="114" u8name="市场部"/>
+			<dep type="销售部门" u8code="10701" u8name="销售部-华北区"/>
+			<dep type="销售部门" u8code="10702" u8name="销售部-华东区"/>
+			<dep type="销售部门" u8code="10703" u8name="销售部-华南区"/>
+			<dep type="销售部门" u8code="10704" u8name="销售部-华西区"/>
+			<dep type="销售部门" u8code="10705" u8name="销售部-腾讯"/>
+			<dep type="销售部门" u8code="10706" u8name="销售部-电商运营+苏皖"/>
+			<dep type="销售部门" u8code="10707" u8name="销售部-电力"/>
+			<dep type="销售部门" u8code="10709" u8name="销售部"/>
+			<dep type="销售部门" u8code="10708" u8name="销售运营"/>
+			<dep type="研发部门" u8code="109" u8name="产品部"/>
+			<dep type="研发部门" u8code="110" u8name="技术部"/>
+			<dep type="研发部门" u8code="111" u8name="安全实验室"/>
+			<dep type="销售部门" u8code="112" u8name="联合研发部"/>
+			<dep type="工程技术部" u8code="10801" u8name="工程技术部-华北区"/>
+			<dep type="工程技术部" u8code="10802" u8name="工程技术部-华东区"/>
+			<dep type="工程技术部" u8code="10803" u8name="工程技术部-华南区"/>
+			<dep type="工程技术部" u8code="10804" u8name="工程技术部-华西区"/>
+			<dep type="销售部门" u8code="10710" u8name="销售部-容器行销组"/>
+                                                <dep type="销售部门" u8code="10712" u8name="销售部-行销组"/>
+			<dep type="销售部门" u8code="10711" u8name="销售部-售前组"/>
+			<dep type="管理部门" u8code="109" u8name="产品部"/>
+			<dep type="管理部门" u8code="110" u8name="技术部"/>
+			<dep type="工程技术部" u8code="115" u8name="安全交付中心"/>
+                                                <dep type="工程技术部" u8code="11506" u8name="安全交付中心"/>
+			<dep type="销售部门" u8code="11501" u8name="安全交付中心-二线支持组"/>
+			<dep type="工程技术部" u8code="11502" u8name="安全交付中心-华北区"/>
+			<dep type="工程技术部" u8code="11503" u8name="安全交付中心-华东区"/>
+			<dep type="工程技术部" u8code="11504" u8name="安全交付中心-华南区"/>
+			<dep type="销售部门" u8code="11505" u8name="安全交付中心-吴钩实验室"/>
+			<dep type="销售部门" u8code="116" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11601" u8name="全国运营中心-工程运营"/>
+			<dep type="销售部门" u8code="11602" u8name="全国运营中心-销售运营"/>
+			<dep type="管理部门" u8code="117" u8name="资本市场部"/>
+			<dep type="销售部门" u8code="11603" u8name="全国运营中心"/>
+			<dep type="销售部门" u8code="11506" u8name="全国运营中心"/>
+                                                <dep type="销售部门" u8code="10713" u8name="销售部-北西区与全国金融"/>
+                                                <dep type="销售部门" u8code="10714" u8name="销售部-北西区与全国金融-金融-东区金融"/>
+                                                <dep type="销售部门" u8code="10715" u8name="销售部-北西区与全国金融-金融-北区金融"/>
+                                                <dep type="销售部门" u8code="10716" u8name="销售部-北西区与全国金融-金融-南区金融"/>
+                                                <dep type="销售部门" u8code="10717" u8name="销售部-北西区与全国金融-北西区非金-互联网组"/>
+                                                <dep type="销售部门" u8code="10718" u8name="销售部-北西区与全国金融-北西区非金-北区央企组"/>
+                                                <dep type="销售部门" u8code="10719" u8name="销售部-北西区与全国金融-北西区非金-北区政府大合作业务拓展组"/>
+                                                <dep type="销售部门" u8code="10720" u8name="销售部-北西区与全国金融-北西区非金-西区"/>
+                                                <dep type="销售部门" u8code="10721" u8name="销售部-北西区与全国金融-北西区非金-北区区域组"/>
+                                                <dep type="销售部门" u8code="10722" u8name="销售部-东区非金-东区区域一组"/>
+                                                <dep type="销售部门" u8code="10723" u8name="销售部-东区非金-东区区域二组"/>
+                                                <dep type="销售部门" u8code="10724" u8name="销售部-南区非金-广东商企组"/>
+                                                <dep type="销售部门" u8code="10725" u8name="销售部-南区非金"/>
+                                                <dep type="销售部门" u8code="10726" u8name="销售部-运营商国网"/>
+                                                <dep type="销售部门" u8code="10727" u8name="销售部-运营商国网-运营商北区"/>
+                                                <dep type="销售部门" u8code="10728" u8name="销售部-运营商国网-运营商东区"/>
+                                                <dep type="销售部门" u8code="10729" u8name="销售部-运营商国网-国网三峡"/>
+                                                <dep type="销售部门" u8code="10730" u8name="销售部-全国售前-东区售前"/>
+                                                <dep type="销售部门" u8code="10731" u8name="销售部-全国售前-南区售前"/>
+                                                <dep type="销售部门" u8code="10732" u8name="销售部-全国售前-北区售前"/>
+                                                <dep type="销售部门" u8code="10733" u8name="销售部-全国售前-渠道售前"/>
+                                                <dep type="销售部门" u8code="10734" u8name="销售部-战略合作腾讯华为"/>
+                                                <dep type="销售部门" u8code="10735" u8name="销售部-渠道合作"/>
+                                                <dep type="销售部门" u8code="10736" u8name="销售部-运营"/>
+		</deptype>
 	</company>
 </ufinterface>

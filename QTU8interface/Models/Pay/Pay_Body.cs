@@ -14,6 +14,8 @@ namespace QTU8interface.Models.Pay
         public decimal tax { get; set; }//进项税额
         public string memo { get; set; }//备注
         public string person { get; set; }//费用承担部门负责人
+        public string yjkm { get; set; }//一级科目
+        public string ejkm { get; set; }//二级科目
 
     }
 }

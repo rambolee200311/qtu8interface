@@ -195,6 +195,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CashFlow\CashFlow.cs" />
     <Compile Include="Models\Customer\Customer.cs" />
     <Compile Include="Models\Customer\CustomerClass.cs" />
     <Compile Include="Models\Customer\LstCustomer.cs" />
@@ -308,14 +309,22 @@
     <Content Include="UFIDA\APCloseHeadADD.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="UFIDA\APVouchBodyADD.xml" />
-    <Content Include="UFIDA\APVouchHeadADD.xml" />
+    <Content Include="UFIDA\APVouchBodyADD.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UFIDA\APVouchHeadADD.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="UFIDA\arapcode.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="UFIDA\ARCloseBodyADD.xml" />
     <Content Include="UFIDA\ARCloseHeadADD.xml" />
     <Content Include="UFIDA\ARVouchBodyADD.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="UFIDA\ARVouchHeadADD.xml" />
+    <Content Include="UFIDA\CashFlowColXml.xml" />
     <Content Include="UFIDA\customer.xml" />
     <Content Include="UFIDA\P0Query.xml" />
     <Content Include="UFIDA\vendor.xml" />

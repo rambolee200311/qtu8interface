@@ -16,6 +16,8 @@ namespace QTU8interface.Models.Payable
         public string prodname { get; set; }//产品名称
         public string billno { get; set; }//发票号
         public string memo { get; set; }//备注
+        public string yjkm { get; set; }//一级科目
+        public string ejkm { get; set; }//二级科目
 
     }
 }

@@ -13,6 +13,11 @@ namespace QTU8interface.Models.Payable
         public decimal amount { get; set; }//金额（含税金额）
         public decimal tax { get; set; }//进项税额
         public string memo { get; set; }//备注
+        public string person { get; set; }//人员姓名
+        public string yjkm { get; set; }//一级科目
+        public string ejkm { get; set; }//二级科目
+        public string sajkm { get; set; }//三级科目
+        public string sijkm { get; set; }//四级科目
 
     }
 }

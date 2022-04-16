@@ -25,7 +25,7 @@ namespace QTU8interface.Controllers
             pay.head.person = "马文涛";
             pay.head.customer = "北京墨迹风云科技股份有限公司";
             pay.head.projname = "应急管理中心-万相高级版-100";
-
+            pay.head.accountcode = "601369199";
             pay.body = new List<Receive_Body>();
             Receive_Body body1 = new Receive_Body();
             body1.rowno = 1;
