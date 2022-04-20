@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Xml;
 using QTU8interface.UFIDA;
 using QTU8interface.Models.Receive;
 using QTU8interface.Models.Result;
+using QTU8interface.Models.CashFlow;
 using System.Data;
 namespace QTU8interface.Entities
 {
@@ -28,6 +30,7 @@ namespace QTU8interface.Entities
             string vouchID = "";
             string cLink = "";
             bool bTran = false;
+            string cashitemcode = "";
             MSXML2.IXMLDOMDocument2 domHead = new MSXML2.DOMDocument30Class();
             MSXML2.IXMLDOMDocument2 domBody = new MSXML2.DOMDocument30Class();
 
@@ -42,7 +45,7 @@ namespace QTU8interface.Entities
             strResult = DBhelper.getDataFromSql(u8login.UfDbName, "select cdefine11 from ap_closebill where cdefine11='" + pay.head.oacode + "'");
             if (strResult != "")
             {
-                strResult = pay.head.oacode + "已生成过付款单";
+                strResult = pay.head.oacode + "已生成过收款单";
                 re.recode = "333";
                 re.remsg = strResult;
                 return;
@@ -60,7 +63,7 @@ namespace QTU8interface.Entities
             //检查项目是否存在
             if (!string.IsNullOrEmpty(pay.head.projname))
             {
-                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemname='" + pay.head.projname + "'");
+                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + pay.head.projname + "'");
                 if (itemcode == "")
                 {
                     strResult = pay.head.projname + "在U8项目管理档案中不存在";
@@ -112,14 +115,41 @@ namespace QTU8interface.Entities
                     //xnnodeclone.attributes.getNamedItem("iTaxRate").text = taxrate.ToString();
 
                     xnnodeclone.attributes.getNamedItem("cDepCode").text = depcode;
-                    xnnodeclone.attributes.getNamedItem("cPersonCode").text = personcode;
-                    //xnnodeclone.attributes.getNamedItem("cItemCode").text = itemcode;
-                    //xnnodeclone.attributes.getNamedItem("cItem_Class").text = "97";
+                    xnnodeclone.attributes.getNamedItem("cPersonCode").text = personcode;                    
                     xnnodeclone.attributes.getNamedItem("cDigest").text = body.memo;
                     xnnodeclone.attributes.getNamedItem("cMemo").text = body.memo;
                     xnnodeclone.attributes.getNamedItem("cDefine22").text = pay.head.oacode;
-                    //xnnodeclone.attributes.getNamedItem("cDefine23").text = pay.head.billno;
-
+                    
+                    CodeResult crKzkm = ARAPCodeEntity.getKzkm(pay.ztcode,u8login);
+                    string codeKzkm = "";
+                    if (crKzkm != null)
+                    {                        
+                        if (!string.IsNullOrEmpty(crKzkm.recode))
+                        {
+                            xnnodeclone.attributes.getNamedItem("cKm").text = crKzkm.recode;
+                            cashitemcode = crKzkm.cashitemcode;
+                        }
+                        if (!string.IsNullOrEmpty(crKzkm.itemClass))
+                        {
+                            xnnodeclone.attributes.getNamedItem("cXmClass").text = crKzkm.itemClass;    
+                            //检查项目是否存在
+                            if (!string.IsNullOrEmpty(body.projname))
+                            {
+                                //itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeDebit.itemClass + " where citemname='" + body.projname + "'");
+                                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + crKzkm.itemClass + " where citemcode='" + body.projname + "'");
+                                if (string.IsNullOrEmpty(itemcode))
+                                {
+                                    strResult = body.projname + "在U8项目管理档案中不存在";
+                                    re.recode = "222";
+                                    re.remsg = strResult;
+                                    return;
+                                }
+                                xnnodeclone.attributes.getNamedItem("cXm").text = itemcode;
+                            }
+                        }
+                           
+                    }
+                    xnnodeclone.attributes.getNamedItem("cDefine23").text = cashitemcode;
                     domBody.selectSingleNode("xml").selectSingleNode("rs:data").appendChild(xnnodeclone);
 
                 }
@@ -148,6 +178,13 @@ namespace QTU8interface.Entities
                 xnnodehead.attributes.getNamedItem("dVouchDate").text = pay.head.ddate.ToShortDateString();
                 xnnodehead.attributes.getNamedItem("iPeriod").text = pay.head.ddate.Month.ToString();
                 xnnodehead.attributes.getNamedItem("iID").text = DBhelper.getDataFromSql(u8login.UfDbName, "select  isnull(max(iid),0)+1 from ap_closebill");
+                String codeDebit = "";
+                CodeResult crDebitCode = ExpenseCodeEntity.getAccountCode(pay.ztcode, pay.head.accountcode);
+                if (!string.IsNullOrEmpty(crDebitCode.recode))
+                { 
+                    codeDebit = crDebitCode.recode;
+                    xnnodehead.attributes.getNamedItem("cCode").text = codeDebit;
+                }
 
                 #endregion
                 /*
@@ -245,6 +282,9 @@ namespace QTU8interface.Entities
             string Date = "";//日
             object objOut = null;
             string ccode = "";
+            List<CashFlow> cashFlows = new List<CashFlow>();
+            XmlDocument xmlDocCashFlow = new XmlDocument();
+            xmlDocCashFlow.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\CashFlowColXml.xml");
             //2 创建组件
             CVoucher.CVInterface obj = new CVoucher.CVInterface();
             //3 创建临时表
@@ -271,66 +311,59 @@ namespace QTU8interface.Entities
             DataTable dtHead = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_closebill where iID='" + cLink + "'");
             DataTable dtBody = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_closebills where iID='" + cLink + "'");
 
+            foreach (DataRow drBody in dtBody.Rows)
+            {
+                //现金流量
+                CashFlow cashFlow = new CashFlow();
+                cashFlow.Amount_f = Convert.ToDecimal(drBody["iAmt"]);
+                cashFlow.Amount = Convert.ToDecimal(drBody["iAmt"]);
+                cashFlow.cCashItem = drBody["cDefine23"].ToString();
+                cashFlows.Add(cashFlow);
+            }
             #region//借方
             
             DataRow drHead = dtHead.Rows[0];
             //无税金额
             //ccode = "1002010101";
-            String codeDebit = "";
-            CodeResult crDebitCode = ExpenseCodeEntity.getAccountCode(pay.ztcode, pay.head.accountcode);
-            if (!string.IsNullOrEmpty(crDebitCode.recode))
-            { codeDebit = crDebitCode.recode; }
-
+            
             strSql = "insert into " + obj.strTempTable
             + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  values("
-            + Month + ",'" + drHead["cDwCode"].ToString() + "','48','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + codeDebit + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drHead["iAmount"].ToString()
+            + Month + ",'" + drHead["cDwCode"].ToString() + "','48','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + drHead["cCode"].ToString() + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drHead["iAmount"].ToString()
             + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "')";
             LogHelper.WriteLog(typeof(ReceiveEntity), "glaccvouch:" + strSql);
             conn.Execute(strSql, out objOut);
+
+            //现金流量
+            setCashXml(u8login.UfDbName, obj, xmlDocCashFlow,
+                                  "AR" + vouchID, Month, Year, Date,
+                                 cDigest, "", "",
+                                  "", "", "", "",
+                                  drHead["cCode"].ToString(), cashFlows, iRow.ToString(), "debit");
             iRow++;
             #endregion
 
             #region//贷方
-            string codeKzkm = "";
+            
 
             foreach (DataRow drBody in dtBody.Rows)
             {
                 //无税金额
-                CodeResult crKzkm = ARAPCodeEntity.getKzkm(pay.ztcode);
-                if (crKzkm != null)
-                {
-                    if (crKzkm.recode != "")
-                    {
-                        codeKzkm = crKzkm.recode;
-                    }
-                }
+                
                 strSql = "insert into " + obj.strTempTable
                 + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
-                + Month + ",'" + drHead["cDwCode"].ToString() + "','48','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + codeKzkm + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iAmt"].ToString()
-                + ",'" + drBody["cDepCode"].ToString() + "','','','" + drBody["cPersonCode"].ToString() + "')";
+                + Month + ",'" + drHead["cDwCode"].ToString() + "','48','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + drBody["cKm"].ToString() + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iAmt"].ToString()
+                + ",'" + drBody["cDepCode"].ToString() + "','" + drBody["cXm"].ToString() + "','" + drBody["cXmClass"].ToString() + "','" + drBody["cPersonCode"].ToString() + "')";
                 LogHelper.WriteLog(typeof(ReceiveEntity), "glaccvouch:" + strSql);
-                conn.Execute(strSql, out objOut);
-                iRow++;
-                /*
-                //税额
-                if (Convert.ToDecimal(drBody["iTax"]) != 0)
-                {
-                    ccode = "2221010201";
-                    strSql = "insert into " + obj.strTempTable
-                    + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
-                    + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','其他应收单','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iTax"].ToString()
-                    + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "')";
-                    LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
-                    conn.Execute(strSql, out objOut);
-                    iRow++;
-                }
-                */
+                conn.Execute(strSql, out objOut);                
+
+                iRow++;                
             }
             #endregion
 
 
             obj.set_Connection(conn);
             obj.LoginByUserToken(u8login.userToken);
+            obj.CashFlowColXml = xmlDocCashFlow.OuterXml;
             bTran = obj.SaveVoucher();
             if (bTran)
             {
@@ -341,11 +374,31 @@ namespace QTU8interface.Entities
                 LogHelper.WriteLog(typeof(ReceiveEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
 
+                /*
                 strSql = " update Ar_Detail set ccode='" + codeKzkm + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='48' and cCoVouchID='" + vouchID + "' and cCoVouchType='48' and iflag=0";
                 LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
                 strSql = " update Ar_Detail set ccode='" + codeDebit + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='48' and cCoVouchID='" + vouchID + "' and cCoVouchType='48' and iflag!=0";
                 LogHelper.WriteLog(typeof(ReceiveEntity), "apvouch:" + strSql);
+                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+                 * */
+                strSql = "update Ap_Detail set cCode=b.cCode,isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "'"
+                        + " from Ap_Detail a inner join Ap_CloseBill b"
+                        + " on a.cVouchID=b.cVouchID and a.cCoVouchID=b.cVouchID "
+                        + " and iClosesID=0 and iCoClosesID=0"
+                        + " and a.cVouchType=b.cVouchType and a.cCoVouchType=b.cVouchType"
+                        + " and a.cVouchType='48' and a.cCoVouchType='48'"
+                        + " and a.cVouchID='" + vouchID + "' and a.cCoVouchID='" + vouchID + "'";
+
+                LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
+                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+                //strSql = " update Ap_Detail set ccode='" + ccodeCredit + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='付款单',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='49' and cCoVouchID='" + vouchID + "' and cCoVouchType='49' and iflag!=0";
+                strSql = "update Ap_Detail set cCode=b.cKm,isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "'"
+                        + " from Ap_Detail a inner join Ap_CloseBills b"
+                        + " on iClosesID=b.ID and iCoClosesID=b.ID"
+                        + " and a.cVouchType='48' and a.cCoVouchType='48'"
+                        + " and a.cVouchID='" + vouchID + "' and a.cCoVouchID='" + vouchID + "'";
+                LogHelper.WriteLog(typeof(PayEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
             }
             else
@@ -355,5 +408,60 @@ namespace QTU8interface.Entities
 
             return bTran;
         }
+        private static void setCashXml(string ConnStr, CVoucher.CVInterface obj, XmlDocument xmlDocCashFlow, string strGuid, string Month, string Year, string Date, string Digest, string EXCH, string VEN, string Dep, string PER, string ItemClass, string Item, string CCODE, List<CashFlow> cashFlows, string Inid, string Debit)
+        {
+            XmlNode xmlNo = xmlDocCashFlow.SelectSingleNode("root/rows").FirstChild;
+            int iRow = 1;
+
+            if (DBhelper.getDataFromSql(ConnStr, "select ccode from code where bCashItem=1 and ccode='" + CCODE + "' and iyear=" + Year) != "")
+            {
+                foreach (CashFlow cashFlow in cashFlows)
+                {
+                    XmlNode xnClone = xmlNo.Clone();
+                    xnClone.Attributes["key"].Value = Guid.NewGuid().ToString();
+                    xnClone.Attributes["RowGuid"].Value = strGuid;// xnClone.Attributes["key"].Value;
+                    xnClone.Attributes["iPeriod"].Value = Month;
+                    xnClone.Attributes["iYear"].Value = Year;
+                    xnClone.Attributes["iYPeriod"].Value = Year + string.Format("{0:D2}", Convert.ToInt32(Month));
+                    xnClone.Attributes["cCashItem"].Value = cashFlow.cCashItem;
+                    xnClone.Attributes["ccode"].Value = CCODE;
+                    xnClone.Attributes["dbill_date"].Value = Date;
+                    xnClone.Attributes["cdigest"].Value = Digest;
+                    xnClone.Attributes["iRow"].Value = iRow.ToString();
+                    xnClone.Attributes["inid"].Value = Inid;
+                    xnClone.Attributes["cexch_name"].Value = "";
+                    xnClone.Attributes["csup_id"].Value = VEN;
+                    xnClone.Attributes["cdept_id"].Value = Dep;
+                    xnClone.Attributes["cperson_id"].Value = PER;
+                    xnClone.Attributes["citem_class"].Value = ItemClass;
+                    xnClone.Attributes["citem_id"].Value = Item;
+
+                    switch (Debit.ToLower())
+                    {
+                        case "debit":
+                            xnClone.Attributes["md_f"].Value = (cashFlow.Amount_f).ToString();
+                            xnClone.Attributes["md"].Value = (cashFlow.Amount).ToString();
+                            xnClone.Attributes["mc_f"].Value = "0";
+                            xnClone.Attributes["mc"].Value = "0";
+                            break;
+                        case "credit":
+                            xnClone.Attributes["mc_f"].Value = (cashFlow.Amount_f).ToString();
+                            xnClone.Attributes["mc"].Value = (cashFlow.Amount).ToString();
+                            xnClone.Attributes["md_f"].Value = "0";
+                            xnClone.Attributes["md"].Value = "0";
+                            break;
+                    }
+
+                    iRow++;
+
+                    xmlDocCashFlow.SelectSingleNode("root/rows").AppendChild(xnClone);
+                }
+
+
+            }
+            xmlDocCashFlow.SelectSingleNode("root/rows").RemoveChild(xmlNo);
+            //xmlDocCashFlow.Save(HttpContext.Current.Server.MapPath("..") + "\\Logs\\xmlDocCashFlow.xml");
+        }    
+    
     }
 }

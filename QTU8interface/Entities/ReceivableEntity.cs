@@ -61,7 +61,7 @@ namespace QTU8interface.Entities
             //检查项目是否存在
             if (!string.IsNullOrEmpty(payable.head.projname))
             {
-                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemname='" + payable.head.projname + "'");
+                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + payable.head.projname + "'");
                 if (itemcode == "")
                 {
                     strResult = payable.head.projname + "在U8项目管理档案中不存在";
@@ -171,6 +171,34 @@ namespace QTU8interface.Entities
                 xnnodehead.attributes.getNamedItem("cDefine12").text = payable.head.billno;
                 xnnodehead.attributes.getNamedItem("cDigest").text = payable.head.memo;
                 xnnodehead.attributes.getNamedItem("dVouchDate").text = payable.head.ddate.ToShortDateString();
+                CodeResult crKzkm = ARAPCodeEntity.getKzkm(payable.ztcode, u8login);
+                string codeKzkm = "";
+                if (crKzkm != null)
+                {
+                    if (!string.IsNullOrEmpty(crKzkm.recode))
+                    {
+                        xnnodehead.attributes.getNamedItem("cCode").text = crKzkm.recode;
+                    }
+                    if (!string.IsNullOrEmpty(crKzkm.itemClass))
+                    {
+                        xnnodehead.attributes.getNamedItem("cItem_Class").text = crKzkm.itemClass;
+                        //检查项目是否存在
+                        if (!string.IsNullOrEmpty(payable.head.projname))
+                        {
+                            //itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeDebit.itemClass + " where citemname='" + body.projname + "'");
+                            itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + crKzkm.itemClass + " where citemcode='" + payable.head.projname + "'");
+                            if (string.IsNullOrEmpty(itemcode))
+                            {
+                                strResult = payable.head.projname + "在U8项目管理档案中不存在";
+                                re.recode = "222";
+                                re.remsg = strResult;
+                                return;
+                            }
+                            xnnodehead.attributes.getNamedItem("cItemCode").text = itemcode;
+                        }
+                    }
+                }
+
                 #endregion
                 /*
                 NetCWAPI.U8NetCWAPIClass uncw = new NetCWAPI.U8NetCWAPIClass();
@@ -289,8 +317,7 @@ namespace QTU8interface.Entities
             DataTable dtHead = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_vouch where clink='" + cLink + "'");
             DataTable dtBody = DBhelper.getDatatableFromSql(u8login.UfDbName, "select * from ap_vouchs where clink='" + cLink + "'");
             Decimal sumTax = 0m;
-            DataRow drHead = dtHead.Rows[0];
-            string codeKzkm = "";
+            DataRow drHead = dtHead.Rows[0];           
 
             foreach (DataRow drBody in dtBody.Rows)
             { sumTax += Convert.ToDecimal(drBody["iTax"]); }
@@ -299,17 +326,10 @@ namespace QTU8interface.Entities
             {                
                 //无税金额
                 //ccode = "112201";                
-                CodeResult crKzkm = ARAPCodeEntity.getKzkm(payable.ztcode);
-                if (crKzkm != null)
-                {
-                    if (crKzkm.recode != "")
-                    {
-                        codeKzkm = crKzkm.recode;
-                    }
-                }
+                
                 strSql = "insert into " + obj.strTempTable
                 + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  values("
-                + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + codeKzkm + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1,"
+                + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + drHead["cCode"].ToString() + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1,"
                     //+ drHead["iAmount"].ToString()
                 + sumTax.ToString()
                 + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "')";
@@ -324,17 +344,7 @@ namespace QTU8interface.Entities
             
             foreach (DataRow drBody in dtBody.Rows)
             {
-                /*
-                //无税金额
-                ccode = "60010101";
-                strSql = "insert into " + obj.strTempTable
-                + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
-                + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','其他应收单','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iNoTaxAmount"].ToString()
-                + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "')";
-                LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
-                conn.Execute(strSql, out objOut);
-                iRow++;
-                 */
+                
                 //税额
                 if (Convert.ToDecimal(drBody["iTax"]) != 0)
                 {
@@ -374,7 +384,7 @@ namespace QTU8interface.Entities
                     LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                     DBhelper.setDataFromSql(u8login.UfDbName, strSql);
 
-                    strSql = " update Ar_Detail set ccode='" + codeKzkm + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='R0' and cCoVouchID='" + vouchID + "' and cCoVouchType='R0'";
+                    strSql = " update Ar_Detail set isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='R0' and cCoVouchID='" + vouchID + "' and cCoVouchType='R0'";
                     LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                     DBhelper.setDataFromSql(u8login.UfDbName, strSql);
                 }

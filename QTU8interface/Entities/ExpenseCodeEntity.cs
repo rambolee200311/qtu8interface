@@ -84,7 +84,8 @@ namespace QTU8interface.Entities
                 itemclass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + expensecode + "' and iyear="+u8login.cIYear);
                 if (!string.IsNullOrEmpty(itemclass))
                 {
-                    string strSql = "select citemcode from fitemss" + itemclass + " where citemname='" + projname + prodname + "'";
+                    //string strSql = "select citemcode from fitemss" + itemclass + " where citemname='" + projname + prodname + "'";
+                    string strSql = "select citemcode from fitemss" + itemclass + " where citemcode='" + projname + prodname + "'";
                     //LogHelper.WriteLog(typeof(ExpenseVouchEntity), strSql);
                     itemcode = DBhelper.getDataFromSql(u8login.UfDbName, strSql);
                     if (string.IsNullOrEmpty(itemcode))

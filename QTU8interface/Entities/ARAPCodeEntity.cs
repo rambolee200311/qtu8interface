@@ -50,11 +50,12 @@ namespace QTU8interface.Entities
          /*
          * 20220330 应收科目
          */
-        public static CodeResult getKzkm(string ztcode)
+        public static CodeResult getKzkm(string ztcode, U8Login.clsLogin u8login)
         {
             CodeResult result = new CodeResult();
             XmlDocument xmlDoc = new XmlDocument();
             XmlNode xmlNo = null;
+            String ccode = "";
             try
             {
                 xmlDoc.Load(filePath);
@@ -67,7 +68,17 @@ namespace QTU8interface.Entities
                     return result;
                 }
                 result.remsg = "";
-                result.recode = xmlNo.Attributes["ccode"].Value.ToString(); ;
+                ccode = xmlNo.Attributes["ccode"].Value.ToString();
+                result.recode =ccode;
+                if (xmlNo.Attributes["cashitemcode"] != null)
+                {
+                    result.cashitemcode = xmlNo.Attributes["cashitemcode"].Value;
+                }
+                string itemClass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + ccode + "' and iyear=" + u8login.cIYear);
+                if (!string.IsNullOrEmpty(itemClass))
+                {
+                    result.itemClass = itemClass;
+                }
             }
             catch (Exception ex)
             {
@@ -113,6 +124,11 @@ namespace QTU8interface.Entities
                 }
 
                 result.recode=ccode;
+                if (xmlNo.Attributes["cashitemcode"] != null)
+                {
+                    result.cashitemcode = xmlNo.Attributes["cashitemcode"].Value;
+                }
+
                 string itemClass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + ccode + "' and iyear="+u8login.cIYear);
                 if (!string.IsNullOrEmpty(itemClass))
                 {

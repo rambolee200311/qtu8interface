@@ -60,7 +60,7 @@ namespace QTU8interface.Entities
             //检查项目是否存在
             if (!string.IsNullOrEmpty(payable.head.projname))
             {
-                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemname='" + payable.head.projname + "'");
+                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + payable.head.projname + "'");
                 if (itemcode == "")
                 {
                     strResult = payable.head.projname + "在U8项目管理档案中不存在";
@@ -177,7 +177,7 @@ namespace QTU8interface.Entities
                             //检查项目是否存在
                             if (!string.IsNullOrEmpty(body.projname))
                             {
-                                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeDebit.itemClass + " where citemname='" + body.projname + "'");
+                                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeDebit.itemClass + " where citemcode='" + body.projname + "'");
                                 if (string.IsNullOrEmpty(itemcode))
                                 {
                                     strResult = body.projname + "在U8项目管理档案中不存在";
@@ -243,7 +243,7 @@ namespace QTU8interface.Entities
                         //检查项目是否存在
                         if (!string.IsNullOrEmpty(payable.head.projname))
                         {
-                            itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeCredit.itemClass + " where citemname='" + payable.head.projname + "'");
+                            itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeCredit.itemClass + " where citemcode='" + payable.head.projname + "'");
                             if (string.IsNullOrEmpty(itemcode))
                             {
                                 strResult = payable.head.projname + "在U8项目管理档案中不存在";

@@ -186,6 +186,8 @@
     <Compile Include="Entities\ExpenseCodeEntity.cs" />
     <Compile Include="Entities\ExpenseVouchEntity.cs" />
     <Compile Include="Entities\FitemEntity.cs" />
+    <Compile Include="Entities\ItemEntity.cs" />
+    <Compile Include="Entities\ItemResult.cs" />
     <Compile Include="Entities\LoanVouchEntity.cs" />
     <Compile Include="Entities\PayableEntity.cs" />
     <Compile Include="Entities\PayEntity.cs" />

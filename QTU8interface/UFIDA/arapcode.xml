@@ -2,227 +2,351 @@
 <ufinterface>
   <company code="996" name="北京升鑫网络科技有限公司">
     <arcodes dsc="应收会计科目">
-      <arcode type="kzkm" ccode="112201" cashitem="01" dsc="应收科目"/>
+      <arcode type="kzkm" ccode="112201" cashitem="01" dsc="应收科目" cashitemcode="01" cashitemname="销售商品、提供劳务收到的现金"/>
       <arcode type="xssrkm" ccode="60010101" dsc="销售收入科目"/>
       <arcode type="xssjkm" ccode="2221010202" dsc="销项税金科目">
-        <xssjkm kplb="产品类"  ccode="2221010201"/>
-        <xssjkm kplb="default"  ccode="2221010202"/>
+        <xssjkm kplb="产品类" ccode="2221010202"/>
+        <xssjkm kplb="default" ccode="2221010201"/>
       </arcode>
     </arcodes>
-    <apcodes dsc="应付会计科目">      
+    <apcodes dsc="应付会计科目">
       <apcode type="cgkm" ccode="140501" dsc="采购科目"/>
       <apcode type="cgsjkm" ccode="2221010101" dsc="进项税金科目"/>
       <apcode type="cbfykm" dsc="成本费用科目">
         <cbfykms dsc="成本费用科目 yjkm一级科目 ejkm二级科目 sajkm三级科目 sijkm四级科目 u8code会计科目 midcode中转会计科目">
-          <cbfykm bflag="" yjkm="办公费" ejkm="快递费" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="保洁费" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="绿植租赁" sajkm="" sijkm="" deptype="" u8code="660222" u8codename="管理费用-租赁费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="饮用水" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="办公用品" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="名片制作费" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="电话费" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="公杂费" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="公杂费" sajkm="" sijkm="" deptype="" u8code="660108" u8codename="销售费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="会费" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公费" ejkm="会费" sajkm="" sijkm="" deptype="" u8code="660108" u8codename="销售费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="设备-电脑" sajkm="" sijkm="" deptype="" u8code="160101" u8codename="固定资产-电子设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="设备-网络设备" sajkm="" sijkm="" deptype="" u8code="160101" u8codename="固定资产-电子设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="设备-服务器" sajkm="" sijkm="" deptype="" u8code="160101" u8codename="固定资产-电子设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="耗材" sajkm="" sijkm="" deptype="销售部门" u8code="660109" u8codename="销售费用-IT耗材" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="耗材" sajkm="" sijkm="" deptype="管理部门" u8code="660209" u8codename="管理费用-IT耗材" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="网络软件服务" sajkm="" sijkm="" deptype="销售部门" u8code="660109" u8codename="销售费用-IT耗材" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="网络软件服务" sajkm="" sijkm="" deptype="管理部门" u8code="660209" u8codename="管理费用-IT耗材" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="IT耗材" ejkm="云服务等" sajkm="" sijkm="" deptype="" u8code="540102020802" u8codename="项目成本（库存商品）-服务-SAAS服务-第三方采购成本-服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="装修费" ejkm="装修费" sajkm="" sijkm="" deptype="" u8code="19010201" u8codename="长期待摊费用-装修费-未完工" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="北京房租-群英科技园" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="北京房租-亦庄" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="武汉房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="上海房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="深圳房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="广州房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="郑州房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="成都房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="南京房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="杭州房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="济南房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="宿舍房租" sajkm="" sijkm="" deptype="" u8code="11230102" u8codename="预付账款-房租款-宿舍房租" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="合肥房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="其他地区" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="长沙房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="房租及物业" ejkm="西安房租" sajkm="" sijkm="" deptype="" u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="水电费" ejkm="水电费" sajkm="" sijkm="" deptype="销售部门" u8code="660116" u8codename="销售费用-水电费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="水电费" ejkm="水电费" sajkm="" sijkm="" deptype="管理部门" u8code="660216" u8codename="管理费用-水电费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="水电费" ejkm="水电费" sajkm="" sijkm="" deptype="研发部门" u8code="53010199" u8codename="研发支出-费用化支出-房租及物业" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="下午茶夜宵" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="津贴/补助" sajkm="" sijkm="" deptype="管理部门" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="津贴/补助" sajkm="" sijkm="" deptype="销售部门" u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="津贴/补助" sajkm="" sijkm="" deptype="研发部门" u8code="53010122" u8codename="研发支出-费用化支出-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="伙食费" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="节庆活动" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北中后台" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="体检" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="工服/文宣" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="护网" sajkm="" sijkm="" deptype="" u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="高管团建" sajkm="" sijkm="" deptype="" u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华南区" sajkm="" sijkm="" deptype="" u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华东区" sajkm="" sijkm="" deptype="" u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-武汉区" sajkm="" sijkm="" deptype="" u8code="53010122" u8codename="研发支出-费用化支出-职工福利费" midcode="221101" midcodename="应付职工薪酬-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北安全交付" sajkm="" sijkm="" deptype="" u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北产研线" sajkm="" sijkm="" deptype="" u8code="53010122" u8codename="研发支出-费用化支出-职工福利费" midcode="221101" midcodename="应付职工薪酬-职工福利费" />
-          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北业务线" sajkm="" sijkm="" deptype="" u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费" />
-          <cbfykm bflag="" yjkm="职工教育经费" ejkm="书籍课件" sajkm="" sijkm="" deptype="" u8code="660205" u8codename="管理费用-职工教育经费" midcode="221105" midcodename="应付职工薪酬-职工教育经费" />
-          <cbfykm bflag="" yjkm="职工教育经费" ejkm="青藤学院" sajkm="" sijkm="" deptype="" u8code="660205" u8codename="管理费用-职工教育经费" midcode="221105" midcodename="应付职工薪酬-职工教育经费" />
-          <cbfykm bflag="" yjkm="职工教育经费" ejkm="培训费" sajkm="" sijkm="" deptype="" u8code="660205" u8codename="管理费用-职工教育经费" midcode="221105" midcodename="应付职工薪酬-职工教育经费" />
-          <cbfykm bflag="" yjkm="招聘费" ejkm="招网渠道" sajkm="" sijkm="" deptype="" u8code="660223" u8codename="管理费用-招聘费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="招聘费" ejkm="猎头费" sajkm="" sijkm="" deptype="" u8code="660223" u8codename="管理费用-招聘费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="招聘费" ejkm="校园招聘" sajkm="" sijkm="" deptype="" u8code="660223" u8codename="管理费用-招聘费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="市场拓展费" ejkm="活动" sajkm="" sijkm="" deptype="" u8code="660113" u8codename="销售费用-市场拓展费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="市场拓展费" ejkm="品牌" sajkm="" sijkm="" deptype="" u8code="660113" u8codename="销售费用-市场拓展费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="市场拓展费" ejkm="内容营销" sajkm="" sijkm="" deptype="" u8code="660113" u8codename="销售费用-市场拓展费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="市场拓展费" ejkm="推广物料" sajkm="" sijkm="" deptype="" u8code="660113" u8codename="销售费用-市场拓展费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="市场拓展费" ejkm="战略市场" sajkm="" sijkm="" deptype="" u8code="660113" u8codename="销售费用-市场拓展费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="中介机构费" ejkm="审计费" sajkm="" sijkm="" deptype="" u8code="66022501" u8codename="管理费用-中介机构费-审计费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="中介机构费" ejkm="咨询费" sajkm="" sijkm="" deptype="" u8code="66022502" u8codename="管理费用-中介机构费-咨询费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="中介机构费" ejkm="评估费" sajkm="" sijkm="" deptype="" u8code="66022503" u8codename="管理费用-中介机构费-评估费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="中介机构费" ejkm="律师费" sajkm="" sijkm="" deptype="" u8code="66022504" u8codename="管理费用-中介机构费-律师费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="中介机构费" ejkm="保荐机构" sajkm="" sijkm="" deptype="" u8code="66022505" u8codename="管理费用-中介机构费-保荐机构" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="招投标费用" ejkm="标书费" sajkm="" sijkm="" deptype="" u8code="66012002" u8codename="销售费用-招投标费用-标书费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="招投标费用" ejkm="中标服务费" sajkm="" sijkm="" deptype="" u8code="66012001" u8codename="销售费用-招投标费用-中标服务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="服务费" ejkm="商务合作/咨询服务" sajkm="" sijkm="" deptype="销售部门" u8code="66011702" u8codename="销售费用-服务费-商务合作" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="服务费" ejkm="商务合作/咨询服务" sajkm="" sijkm="" deptype="管理部门" u8code="660217" u8codename="管理费用-服务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="服务费" ejkm="信息技术服务" sajkm="" sijkm="" deptype="销售部门" u8code="66011704" u8codename="销售费用-服务费-信息服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="服务费" ejkm="信息技术服务" sajkm="" sijkm="" deptype="管理部门" u8code="660217" u8codename="管理费用-服务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="服务费" ejkm="证照、资质年检、申办" sajkm="" sijkm="" deptype="" u8code="660217" u8codename="管理费用-服务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="招待费" ejkm="招待费" sajkm="" sijkm="" deptype="管理部门" u8code="660107" u8codename="管理费用-招待费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="招待费" ejkm="招待费" sajkm="" sijkm="" deptype="销售部门" u8code="660207" u8codename="销售费用-招待费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="交通费" ejkm="交通费" sajkm="" sijkm="" deptype="研发部门" u8code="53010116" u8codename="研发支出-费用化支出-交通费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="交通费" ejkm="交通费" sajkm="" sijkm="" deptype="管理部门" u8code="660211" u8codename="管理费用-交通费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="交通费" ejkm="交通费" sajkm="" sijkm="" deptype="销售部门" u8code="660111" u8codename="销售费用-交通费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="差旅费" ejkm="差旅费" sajkm="" sijkm="" deptype="研发部门" u8code="53010121" u8codename="研发支出-费用化支出-差旅费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="差旅费" ejkm="差旅费" sajkm="" sijkm="" deptype="管理部门" u8code="660210" u8codename="管理费用-差旅费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="差旅费" ejkm="差旅费" sajkm="" sijkm="" deptype="销售部门" u8code="660110" u8codename="销售费用-差旅费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="会务费" ejkm="会务费" sajkm="" sijkm="" deptype="销售部门" u8code="660122" u8codename="销售费用-会务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="会务费" ejkm="会务费" sajkm="" sijkm="" deptype="管理部门" u8code="660221" u8codename="管理费用-会务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="知识产权相关费用" ejkm="知识产权相关费用" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="护网专项" ejkm="护网专项" sajkm="" sijkm="" deptype="" u8code="540104" u8codename="项目成本（库存商品）-护网专项" midcode="" midcodename="" />
-          <cbfykm bflag="否" yjkm="五险一金" ejkm="五险一金" sajkm="" sijkm="" deptype="" u8code="" u8codename="" midcode="" midcodename="" />
-          <cbfykm bflag="否" yjkm="代发工资" ejkm="代发工资" sajkm="" sijkm="" deptype="" u8code="" u8codename="" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="其他专项支出" ejkm="境外公司注销" sajkm="" sijkm="" deptype="" u8code="660217" u8codename="管理费用-服务费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="其他专项支出" ejkm="财务软件、办公软件等" sajkm="" sijkm="" deptype="" u8code="112303" u8codename="预付账款-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="其他专项支出" ejkm="武汉宜科中心装修" sajkm="" sijkm="" deptype="" u8code="19010201" u8codename="长期待摊费用-装修费-未完工" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="其他专项支出" ejkm="其他专项支出" sajkm="" sijkm="" deptype="" u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="其他专项支出" ejkm="群英科技园3号楼装修" sajkm="" sijkm="" deptype="" u8code="19010201" u8codename="长期待摊费用-装修费-未完工" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="办公设备" ejkm="办公设备" sajkm="" sijkm="" deptype="" u8code="160102" u8codename="固定资产-办公设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机自适应安全平台V3" sijkm="设备" deptype="" u8code="540101010801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机自适应安全平台V3" sijkm="服务" deptype="" u8code="540101010802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机docker容器安全软件V3" sijkm="设备" deptype="" u8code="540101020801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机docker容器安全软件V3" sijkm="服务" deptype="" u8code="540101020802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤慧眼-（云）主机入侵检测系统V3" sijkm="设备" deptype="" u8code="540101030801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤慧眼-（云）主机入侵检测系统V3" sijkm="服务" deptype="" u8code="540101030802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤猎鹰威胁狩猎平台V3" sijkm="设备" deptype="" u8code="540101040801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤猎鹰威胁狩猎平台V3" sijkm="服务" deptype="" u8code="540101040802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-维保服务" sijkm="设备" deptype="" u8code="540102010801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-维保服务" sijkm="服务" deptype="" u8code="540102010802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-SAAS服务" sijkm="设备" deptype="" u8code="540102020801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-SAAS服务" sijkm="服务" deptype="" u8code="540102020802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-驻场服务" sijkm="设备" deptype="" u8code="540102030801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-驻场服务" sijkm="服务" deptype="" u8code="540102030802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-专业安全服务" sijkm="设备" deptype="" u8code="540102040801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-专业安全服务" sijkm="服务" deptype="" u8code="540102040802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-定制开发" sijkm="设备" deptype="" u8code="540102050801" u8codename="第三方采购成本设备" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-定制开发" sijkm="服务" deptype="" u8code="540102050802" u8codename="第三方采购成本服务" midcode="" midcodename="" />
-          <cbfykm bflag="否" yjkm="投标保证金" ejkm="投标保证金" sajkm="" sijkm="" deptype="" u8code="" u8codename="" midcode="" midcodename="" />
-          <cbfykm bflag="" yjkm="投标保证金" ejkm="中标服务费" sajkm="" sijkm="" deptype="" u8code="66012001" u8codename="销售费用-招投标费用-中标服务费" midcode="" midcodename="" />
+          <cbfykm bflag="" yjkm="办公费" ejkm="快递费" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="保洁费" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="绿植租赁" sajkm="" sijkm="" deptype="" u8code="660222"
+            u8codename="管理费用-租赁费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="饮用水" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="办公用品" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="名片制作费" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="电话费" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="公杂费" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="公杂费" sajkm="" sijkm="" deptype="" u8code="660108"
+            u8codename="销售费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="会费" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公费" ejkm="会费" sajkm="" sijkm="" deptype="" u8code="660108"
+            u8codename="销售费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="设备-电脑" sajkm="" sijkm="" deptype="" u8code="160101"
+            u8codename="固定资产-电子设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="设备-网络设备" sajkm="" sijkm="" deptype="" u8code="160101"
+            u8codename="固定资产-电子设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="设备-服务器" sajkm="" sijkm="" deptype="" u8code="160101"
+            u8codename="固定资产-电子设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="耗材" sajkm="" sijkm="" deptype="销售部门" u8code="660109"
+            u8codename="销售费用-IT耗材" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="耗材" sajkm="" sijkm="" deptype="管理部门" u8code="660209"
+            u8codename="管理费用-IT耗材" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="网络软件服务" sajkm="" sijkm="" deptype="销售部门"
+            u8code="660109" u8codename="销售费用-IT耗材" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="网络软件服务" sajkm="" sijkm="" deptype="管理部门"
+            u8code="660209" u8codename="管理费用-IT耗材" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="IT耗材" ejkm="云服务等" sajkm="" sijkm="" deptype=""
+            u8code="540102020802" u8codename="项目成本（库存商品）-服务-SAAS服务-第三方采购成本-服务" midcode=""
+            midcodename=""/>
+          <cbfykm bflag="" yjkm="装修费" ejkm="装修费" sajkm="" sijkm="" deptype="" u8code="19010201"
+            u8codename="长期待摊费用-装修费-未完工" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="北京房租-群英科技园" sajkm="" sijkm="" deptype=""
+            u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="北京房租-亦庄" sajkm="" sijkm="" deptype=""
+            u8code="11230103" u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="武汉房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="上海房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="深圳房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="广州房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="郑州房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="成都房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="南京房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="杭州房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="济南房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="宿舍房租" sajkm="" sijkm="" deptype="" u8code="11230102"
+            u8codename="预付账款-房租款-宿舍房租" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="合肥房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="其他地区" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="长沙房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="房租及物业" ejkm="西安房租" sajkm="" sijkm="" deptype="" u8code="11230103"
+            u8codename="预付账款-房租款-办公房租（新）" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="水电费" ejkm="水电费" sajkm="" sijkm="" deptype="销售部门" u8code="660116"
+            u8codename="销售费用-水电费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="水电费" ejkm="水电费" sajkm="" sijkm="" deptype="管理部门" u8code="660216"
+            u8codename="管理费用-水电费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="水电费" ejkm="水电费" sajkm="" sijkm="" deptype="研发部门" u8code="53010199"
+            u8codename="研发支出-费用化支出-房租及物业" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="下午茶夜宵" sajkm="" sijkm="" deptype="" u8code="660202"
+            u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="津贴/补助" sajkm="" sijkm="" deptype="管理部门"
+            u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="津贴/补助" sajkm="" sijkm="" deptype="销售部门"
+            u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="津贴/补助" sajkm="" sijkm="" deptype="研发部门"
+            u8code="53010122" u8codename="研发支出-费用化支出-职工福利费" midcode="221102"
+            midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="伙食费" sajkm="" sijkm="" deptype="" u8code="660202"
+            u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="节庆活动" sajkm="" sijkm="" deptype="" u8code="660202"
+            u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北中后台" sajkm="" sijkm="" deptype=""
+            u8code="660202" u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="体检" sajkm="" sijkm="" deptype="" u8code="660202"
+            u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="工服/文宣" sajkm="" sijkm="" deptype="" u8code="660202"
+            u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="护网" sajkm="" sijkm="" deptype="" u8code="660102"
+            u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="高管团建" sajkm="" sijkm="" deptype="" u8code="660202"
+            u8codename="管理费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华南区" sajkm="" sijkm="" deptype="" u8code="660102"
+            u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华东区" sajkm="" sijkm="" deptype="" u8code="660102"
+            u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-武汉区" sajkm="" sijkm="" deptype=""
+            u8code="53010122" u8codename="研发支出-费用化支出-职工福利费" midcode="221101"
+            midcodename="应付职工薪酬-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北安全交付" sajkm="" sijkm="" deptype=""
+            u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北产研线" sajkm="" sijkm="" deptype=""
+            u8code="53010122" u8codename="研发支出-费用化支出-职工福利费" midcode="221101"
+            midcodename="应付职工薪酬-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工福利费" ejkm="团建费-华北业务线" sajkm="" sijkm="" deptype=""
+            u8code="660102" u8codename="销售费用-职工福利费" midcode="221102" midcodename="应付账款-职工福利费"/>
+          <cbfykm bflag="" yjkm="职工教育经费" ejkm="书籍课件" sajkm="" sijkm="" deptype="" u8code="660205"
+            u8codename="管理费用-职工教育经费" midcode="221105" midcodename="应付职工薪酬-职工教育经费"/>
+          <cbfykm bflag="" yjkm="职工教育经费" ejkm="青藤学院" sajkm="" sijkm="" deptype="" u8code="660205"
+            u8codename="管理费用-职工教育经费" midcode="221105" midcodename="应付职工薪酬-职工教育经费"/>
+          <cbfykm bflag="" yjkm="职工教育经费" ejkm="培训费" sajkm="" sijkm="" deptype="" u8code="660205"
+            u8codename="管理费用-职工教育经费" midcode="221105" midcodename="应付职工薪酬-职工教育经费"/>
+          <cbfykm bflag="" yjkm="招聘费" ejkm="招网渠道" sajkm="" sijkm="" deptype="" u8code="660223"
+            u8codename="管理费用-招聘费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="招聘费" ejkm="猎头费" sajkm="" sijkm="" deptype="" u8code="660223"
+            u8codename="管理费用-招聘费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="招聘费" ejkm="校园招聘" sajkm="" sijkm="" deptype="" u8code="660223"
+            u8codename="管理费用-招聘费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="市场拓展费" ejkm="活动" sajkm="" sijkm="" deptype="" u8code="660113"
+            u8codename="销售费用-市场拓展费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="市场拓展费" ejkm="品牌" sajkm="" sijkm="" deptype="" u8code="660113"
+            u8codename="销售费用-市场拓展费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="市场拓展费" ejkm="内容营销" sajkm="" sijkm="" deptype="" u8code="660113"
+            u8codename="销售费用-市场拓展费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="市场拓展费" ejkm="推广物料" sajkm="" sijkm="" deptype="" u8code="660113"
+            u8codename="销售费用-市场拓展费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="市场拓展费" ejkm="战略市场" sajkm="" sijkm="" deptype="" u8code="660113"
+            u8codename="销售费用-市场拓展费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="中介机构费" ejkm="审计费" sajkm="" sijkm="" deptype="" u8code="66022501"
+            u8codename="管理费用-中介机构费-审计费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="中介机构费" ejkm="咨询费" sajkm="" sijkm="" deptype="" u8code="66022502"
+            u8codename="管理费用-中介机构费-咨询费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="中介机构费" ejkm="评估费" sajkm="" sijkm="" deptype="" u8code="66022503"
+            u8codename="管理费用-中介机构费-评估费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="中介机构费" ejkm="律师费" sajkm="" sijkm="" deptype="" u8code="66022504"
+            u8codename="管理费用-中介机构费-律师费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="中介机构费" ejkm="保荐机构" sajkm="" sijkm="" deptype="" u8code="66022505"
+            u8codename="管理费用-中介机构费-保荐机构" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="招投标费用" ejkm="标书费" sajkm="" sijkm="" deptype="" u8code="66012002"
+            u8codename="销售费用-招投标费用-标书费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="招投标费用" ejkm="中标服务费" sajkm="" sijkm="" deptype="" u8code="66012001"
+            u8codename="销售费用-招投标费用-中标服务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="服务费" ejkm="商务合作/咨询服务" sajkm="" sijkm="" deptype="销售部门"
+            u8code="66011702" u8codename="销售费用-服务费-商务合作" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="服务费" ejkm="商务合作/咨询服务" sajkm="" sijkm="" deptype="管理部门"
+            u8code="660217" u8codename="管理费用-服务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="服务费" ejkm="信息技术服务" sajkm="" sijkm="" deptype="销售部门"
+            u8code="66011704" u8codename="销售费用-服务费-信息服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="服务费" ejkm="信息技术服务" sajkm="" sijkm="" deptype="管理部门" u8code="660217"
+            u8codename="管理费用-服务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="服务费" ejkm="证照、资质年检、申办" sajkm="" sijkm="" deptype="" u8code="660217"
+            u8codename="管理费用-服务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="招待费" ejkm="招待费" sajkm="" sijkm="" deptype="管理部门" u8code="660107"
+            u8codename="管理费用-招待费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="招待费" ejkm="招待费" sajkm="" sijkm="" deptype="销售部门" u8code="660207"
+            u8codename="销售费用-招待费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="交通费" ejkm="交通费" sajkm="" sijkm="" deptype="研发部门" u8code="53010116"
+            u8codename="研发支出-费用化支出-交通费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="交通费" ejkm="交通费" sajkm="" sijkm="" deptype="管理部门" u8code="660211"
+            u8codename="管理费用-交通费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="交通费" ejkm="交通费" sajkm="" sijkm="" deptype="销售部门" u8code="660111"
+            u8codename="销售费用-交通费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="差旅费" ejkm="差旅费" sajkm="" sijkm="" deptype="研发部门" u8code="53010121"
+            u8codename="研发支出-费用化支出-差旅费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="差旅费" ejkm="差旅费" sajkm="" sijkm="" deptype="管理部门" u8code="660210"
+            u8codename="管理费用-差旅费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="差旅费" ejkm="差旅费" sajkm="" sijkm="" deptype="销售部门" u8code="660110"
+            u8codename="销售费用-差旅费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="会务费" ejkm="会务费" sajkm="" sijkm="" deptype="销售部门" u8code="660122"
+            u8codename="销售费用-会务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="会务费" ejkm="会务费" sajkm="" sijkm="" deptype="管理部门" u8code="660221"
+            u8codename="管理费用-会务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="知识产权相关费用" ejkm="知识产权相关费用" sajkm="" sijkm="" deptype=""
+            u8code="660208" u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="护网专项" ejkm="护网专项" sajkm="" sijkm="" deptype="" u8code="540104"
+            u8codename="项目成本（库存商品）-护网专项" midcode="" midcodename=""/>
+          <cbfykm bflag="否" yjkm="五险一金" ejkm="五险一金" sajkm="" sijkm="" deptype="" u8code=""
+            u8codename="" midcode="" midcodename=""/>
+          <cbfykm bflag="否" yjkm="代发工资" ejkm="代发工资" sajkm="" sijkm="" deptype="" u8code=""
+            u8codename="" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="其他专项支出" ejkm="境外公司注销" sajkm="" sijkm="" deptype="" u8code="660217"
+            u8codename="管理费用-服务费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="其他专项支出" ejkm="财务软件、办公软件等" sajkm="" sijkm="" deptype=""
+            u8code="112303" u8codename="预付账款-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="其他专项支出" ejkm="武汉宜科中心装修" sajkm="" sijkm="" deptype=""
+            u8code="19010201" u8codename="长期待摊费用-装修费-未完工" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="其他专项支出" ejkm="其他专项支出" sajkm="" sijkm="" deptype="" u8code="660208"
+            u8codename="管理费用-办公费" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="其他专项支出" ejkm="群英科技园3号楼装修" sajkm="" sijkm="" deptype=""
+            u8code="19010201" u8codename="长期待摊费用-装修费-未完工" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="办公设备" ejkm="办公设备" sajkm="" sijkm="" deptype="" u8code="160102"
+            u8codename="固定资产-办公设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机自适应安全平台V3" sijkm="设备" deptype=""
+            u8code="540101010801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机自适应安全平台V3" sijkm="服务" deptype=""
+            u8code="540101010802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机docker容器安全软件V3" sijkm="设备"
+            deptype="" u8code="540101020801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤主机docker容器安全软件V3" sijkm="服务"
+            deptype="" u8code="540101020802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤慧眼-（云）主机入侵检测系统V3" sijkm="设备"
+            deptype="" u8code="540101030801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤慧眼-（云）主机入侵检测系统V3" sijkm="服务"
+            deptype="" u8code="540101030802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤猎鹰威胁狩猎平台V3" sijkm="设备" deptype=""
+            u8code="540101040801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="产品类-青藤猎鹰威胁狩猎平台V3" sijkm="服务" deptype=""
+            u8code="540101040802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-维保服务" sijkm="设备" deptype=""
+            u8code="540102010801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-维保服务" sijkm="服务" deptype=""
+            u8code="540102010802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-SAAS服务" sijkm="设备" deptype=""
+            u8code="540102020801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-SAAS服务" sijkm="服务" deptype=""
+            u8code="540102020802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-驻场服务" sijkm="设备" deptype=""
+            u8code="540102030801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-驻场服务" sijkm="服务" deptype=""
+            u8code="540102030802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-专业安全服务" sijkm="设备" deptype=""
+            u8code="540102040801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-专业安全服务" sijkm="服务" deptype=""
+            u8code="540102040802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-定制开发" sijkm="设备" deptype=""
+            u8code="540102050801" u8codename="第三方采购成本设备" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="项目采购" ejkm="项目采购" sajkm="服务类-定制开发" sijkm="服务" deptype=""
+            u8code="540102050802" u8codename="第三方采购成本服务" midcode="" midcodename=""/>
+          <cbfykm bflag="否" yjkm="投标保证金" ejkm="投标保证金" sajkm="" sijkm="" deptype="" u8code=""
+            u8codename="" midcode="" midcodename=""/>
+          <cbfykm bflag="" yjkm="投标保证金" ejkm="中标服务费" sajkm="" sijkm="" deptype="" u8code="66012001"
+            u8codename="销售费用-招投标费用-中标服务费" midcode="" midcodename=""/>
         </cbfykms>
       </apcode>
       <apcode type="kzkm" dsc="应付科目">
         <kzkms dsc="应付科目 yjkm一级科目 ejkm二级科目 u8code会计科目">
-          <kzkm bflag="" yjkm="办公费" ejkm="快递费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="保洁费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="绿植租赁" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="饮用水" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="办公用品" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="名片制作费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="电话费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="公杂费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公费" ejkm="会费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="IT耗材" ejkm="设备-电脑" u8code="220202" u8codename="应付账款-IT设备" />
-          <kzkm bflag="" yjkm="IT耗材" ejkm="设备-网络设备" u8code="220202" u8codename="应付账款-IT设备" />
-          <kzkm bflag="" yjkm="IT耗材" ejkm="设备-服务器" u8code="220202" u8codename="应付账款-IT设备" />
-          <kzkm bflag="" yjkm="IT耗材" ejkm="耗材" u8code="220202" u8codename="应付账款-IT设备" />
-          <kzkm bflag="" yjkm="IT耗材" ejkm="网络软件服务" u8code="220202" u8codename="应付账款-IT设备" />
-          <kzkm bflag="" yjkm="IT耗材" ejkm="云服务等" u8code="220202" u8codename="应付账款-IT设备" />
-          <kzkm bflag="" yjkm="装修费" ejkm="装修费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="北京房租-群英科技园" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="北京房租-亦庄" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="武汉房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="上海房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="深圳房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="广州房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="郑州房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="成都房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="南京房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="杭州房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="济南房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="宿舍房租" u8code="22020102" u8codename="应付账款-房租款-宿舍房租" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="合肥房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="其他地区" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="长沙房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="房租及物业" ejkm="西安房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" />
-          <kzkm bflag="" yjkm="水电费" ejkm="水电费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="下午茶夜宵" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="津贴/补助" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="伙食费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="节庆活动" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北中后台" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="体检" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="工服/文宣" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="护网" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="高管团建" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华南区" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华东区" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-武汉区" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北安全交付" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北产研线" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北业务线" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工教育经费" ejkm="书籍课件" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工教育经费" ejkm="青藤学院" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="职工教育经费" ejkm="培训费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="招聘费" ejkm="招网渠道" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="招聘费" ejkm="猎头费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="招聘费" ejkm="校园招聘" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="市场拓展费" ejkm="活动" u8code="220204" u8codename="应付账款-市场费用" />
-          <kzkm bflag="" yjkm="市场拓展费" ejkm="品牌" u8code="220204" u8codename="应付账款-市场费用" />
-          <kzkm bflag="" yjkm="市场拓展费" ejkm="内容营销" u8code="220204" u8codename="应付账款-市场费用" />
-          <kzkm bflag="" yjkm="市场拓展费" ejkm="推广物料" u8code="220204" u8codename="应付账款-市场费用" />
-          <kzkm bflag="" yjkm="市场拓展费" ejkm="战略市场" u8code="220204" u8codename="应付账款-市场费用" />
-          <kzkm bflag="" yjkm="中介机构费" ejkm="审计费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="中介机构费" ejkm="咨询费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="中介机构费" ejkm="评估费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="中介机构费" ejkm="律师费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="中介机构费" ejkm="保荐机构" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="招投标费用" ejkm="标书费" u8code="220205" u8codename="应付账款-招投标费用" />
-          <kzkm bflag="" yjkm="招投标费用" ejkm="中标服务费" u8code="220205" u8codename="应付账款-招投标费用" />
-          <kzkm bflag="" yjkm="服务费" ejkm="商务合作/咨询服务" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="服务费" ejkm="信息技术服务" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="服务费" ejkm="证照、资质年检、申办" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="招待费" ejkm="招待费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="交通费" ejkm="交通费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="差旅费" ejkm="差旅费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="会务费" ejkm="会务费" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="知识产权相关费用" ejkm="知识产权相关费用" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="护网专项" ejkm="护网专项" u8code="220207" u8codename="应付账款-护网专项" />
-          <kzkm bflag="否" yjkm="五险一金" ejkm="五险一金" u8code="" u8codename="" />
-          <kzkm bflag="否" yjkm="代发工资" ejkm="代发工资" u8code="" u8codename="" />
-          <kzkm bflag="" yjkm="其他专项支出" ejkm="境外公司注销" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="其他专项支出" ejkm="财务软件、办公软件等" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="其他专项支出" ejkm="武汉宜科中心装修" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="其他专项支出" ejkm="其他专项支出" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="其他专项支出" ejkm="群英科技园3号楼装修" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="办公设备" ejkm="办公设备" u8code="220203" u8codename="应付账款-办公费" />
-          <kzkm bflag="" yjkm="项目采购" ejkm="项目采购" u8code="220206" u8codename="应付账款-项目类（第三方采购申请）" />
-          <kzkm bflag="" yjkm="投标保证金" ejkm="投标保证金" u8code="122102" u8codename="其他应收款-投标保证金" />
-          <kzkm bflag="" yjkm="投标保证金" ejkm="中标服务费" u8code="220205" u8codename="应付账款-招投标费用" />
+          <kzkm bflag="" yjkm="办公费" ejkm="快递费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="保洁费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="绿植租赁" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0703" cashitemname="租赁费"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="饮用水" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="办公用品" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="名片制作费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="电话费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="公杂费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="办公费" ejkm="会费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="IT耗材" ejkm="设备-电脑" u8code="220202" u8codename="应付账款-IT设备" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="IT耗材" ejkm="设备-网络设备" u8code="220202" u8codename="应付账款-IT设备" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="IT耗材" ejkm="设备-服务器" u8code="220202" u8codename="应付账款-IT设备" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="IT耗材" ejkm="耗材" u8code="220202" u8codename="应付账款-IT设备" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="IT耗材" ejkm="网络软件服务" u8code="220202" u8codename="应付账款-IT设备" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="IT耗材" ejkm="云服务等" u8code="220202" u8codename="应付账款-IT设备" cashitemcode="04" cashitemname="购买商品、接受劳务支付的现金"/>
+          <kzkm bflag="" yjkm="装修费" ejkm="装修费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="北京房租-群英科技园" u8code="22020103"
+            u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="北京房租-亦庄" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="武汉房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="上海房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="深圳房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="广州房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="郑州房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="成都房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="南京房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="杭州房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="济南房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="宿舍房租" u8code="22020102" u8codename="应付账款-房租款-宿舍房租" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="合肥房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="其他地区" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="长沙房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="房租及物业" ejkm="西安房租" u8code="22020103" u8codename="应付账款-房租款-办公房租（新）" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="水电费" ejkm="水电费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0704" cashitemname="房租"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="下午茶夜宵" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="津贴/补助" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="伙食费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="节庆活动" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北中后台" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="体检" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="工服/文宣" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="护网" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="高管团建" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华南区" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华东区" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-武汉区" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北安全交付" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北产研线" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工福利费" ejkm="团建费-华北业务线" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工教育经费" ejkm="书籍课件" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工教育经费" ejkm="青藤学院" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="职工教育经费" ejkm="培训费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="05" cashitemname="支付给职工以及为职工支付的现金"/>
+          <kzkm bflag="" yjkm="招聘费" ejkm="招网渠道" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="招聘费" ejkm="猎头费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="招聘费" ejkm="校园招聘" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="市场拓展费" ejkm="活动" u8code="220204" u8codename="应付账款-市场费用" cashitemcode="0708" cashitemname="市场宣传"/>
+          <kzkm bflag="" yjkm="市场拓展费" ejkm="品牌" u8code="220204" u8codename="应付账款-市场费用" cashitemcode="0708" cashitemname="市场宣传"/>
+          <kzkm bflag="" yjkm="市场拓展费" ejkm="内容营销" u8code="220204" u8codename="应付账款-市场费用" cashitemcode="0708" cashitemname="市场宣传"/>
+          <kzkm bflag="" yjkm="市场拓展费" ejkm="推广物料" u8code="220204" u8codename="应付账款-市场费用" cashitemcode="0708" cashitemname="市场宣传"/>
+          <kzkm bflag="" yjkm="市场拓展费" ejkm="战略市场" u8code="220204" u8codename="应付账款-市场费用" cashitemcode="0708" cashitemname="市场宣传"/>
+          <kzkm bflag="" yjkm="中介机构费" ejkm="审计费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0706" cashitemname="中介机构"/>
+          <kzkm bflag="" yjkm="中介机构费" ejkm="咨询费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0706" cashitemname="中介机构"/>
+          <kzkm bflag="" yjkm="中介机构费" ejkm="评估费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0706" cashitemname="中介机构"/>
+          <kzkm bflag="" yjkm="中介机构费" ejkm="律师费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0706" cashitemname="中介机构"/>
+          <kzkm bflag="" yjkm="中介机构费" ejkm="保荐机构" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0706" cashitemname="中介机构"/>
+          <kzkm bflag="" yjkm="招投标费用" ejkm="标书费" u8code="220205" u8codename="应付账款-招投标费用" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="招投标费用" ejkm="中标服务费" u8code="220205" u8codename="应付账款-招投标费用" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="服务费" ejkm="商务合作/咨询服务" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="服务费" ejkm="信息技术服务" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="服务费" ejkm="证照、资质年检、申办" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0709" cashitemname="服务费"/>
+          <kzkm bflag="" yjkm="招待费" ejkm="招待费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0701" cashitemname="差旅及招待"/>
+          <kzkm bflag="" yjkm="交通费" ejkm="交通费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0701" cashitemname="差旅及招待"/>
+          <kzkm bflag="" yjkm="差旅费" ejkm="差旅费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="07" cashitemname="差旅及招待"/>
+          <kzkm bflag="" yjkm="会务费" ejkm="会务费" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0707" cashitemname="会务费"/>
+          <kzkm bflag="" yjkm="知识产权相关费用" ejkm="知识产权相关费用" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0710" cashitemname="研发费用"/>
+          <kzkm bflag="" yjkm="护网专项" ejkm="护网专项" u8code="220207" u8codename="应付账款-护网专项" cashitemcode="04" cashitemname="购买商品、接受劳务支付的现金"/>
+          <kzkm bflag="否" yjkm="五险一金" ejkm="五险一金" u8code="" u8codename=""/>
+          <kzkm bflag="否" yjkm="代发工资" ejkm="代发工资" u8code="" u8codename=""/>
+          <kzkm bflag="" yjkm="其他专项支出" ejkm="境外公司注销" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="其他专项支出" ejkm="财务软件、办公软件等" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="其他专项支出" ejkm="武汉宜科中心装修" u8code="220203" u8codename="应付账款-办公费" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="其他专项支出" ejkm="其他专项支出" u8code="220203" u8codename="应付账款-办公费" cashitemcode="0711" cashitemname="支付其它与经营活动有关的现金-其他"/>
+          <kzkm bflag="" yjkm="其他专项支出" ejkm="群英科技园3号楼装修" u8code="220203" u8codename="应付账款-办公费" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="办公设备" ejkm="办公设备" u8code="220203" u8codename="应付账款-办公费" cashitemcode="13" cashitemname="购建固定资产、无形资产和其他长期资产所支付的现金"/>
+          <kzkm bflag="" yjkm="项目采购" ejkm="项目采购" u8code="220206" u8codename="应付账款-项目类（第三方采购申请）" cashitemcode="04" cashitemname="购买商品、接受劳务支付的现金"/>
+          <kzkm bflag="" yjkm="投标保证金" ejkm="投标保证金" u8code="122102" u8codename="其他应收款-投标保证金" cashitemcode="0702" cashitemname="保证金及押金"/>
+          <kzkm bflag="" yjkm="投标保证金" ejkm="中标服务费" u8code="220205" u8codename="应付账款-招投标费用" cashitemcode="0709" cashitemname="服务费"/>
         </kzkms>
       </apcode>
     </apcodes>
