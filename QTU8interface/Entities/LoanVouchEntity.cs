@@ -5,6 +5,7 @@ using System.Web;
 using System.Xml;
 using QTU8interface.Models.Loan;
 using QTU8interface.Models.Result;
+using QTU8interface.Models.CashFlow;
 using QTU8interface.UFIDA;
 
 namespace QTU8interface.Entities
@@ -31,8 +32,12 @@ namespace QTU8interface.Entities
             decimal sumamount = 0m;
             decimal tax = 0m;
             decimal money = 0m;
+            String dc="";
             XmlDocument xmlDoc = new XmlDocument();
+            XmlDocument xmlDocCashFlow = new XmlDocument();
+            xmlDocCashFlow.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\CashFlowColXml.xml");
             XmlNode xmlNo = null;
+            List<CashFlow> cashFlows = new List<CashFlow>();
             try
             {
                 xmlDoc.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\voucherconfig.xml");
@@ -81,7 +86,7 @@ namespace QTU8interface.Entities
                         + "md_f money default 0, mc_f money default 0, nfrat float default 0, nd_s float default 0, nc_s float default 0, csettle nvarchar(23), "
                         + "cn_id nvarchar(30), dt_date DATETIME, cdept_id nvarchar(12), cperson_id nvarchar(80), ccus_id nvarchar(80), csup_id nvarchar (20), "
                         + "citem_id nvarchar(80), citem_class nvarchar(22), cname nvarchar(40), ccode_equal nvarchar(50), "
-                        + "bvouchedit bit default 0, bvouchaddordele bit default 0, bvouchmoneyhold bit default 0, bvalueedit bit default 0, bcodeedit bit default 0, ccodecontrol nvarchar(50), bPCSedit bit default 0, bDeptedit bit default 0, bItemedit bit default 0, bCusSupInput bit default 0, "
+                        + "bvouchedit bit default 1, bvouchaddordele bit default 1, bvouchmoneyhold bit default 1, bvalueedit bit default 1, bcodeedit bit default 1, ccodecontrol nvarchar(50), bPCSedit bit default 1, bDeptedit bit default 1, bItemedit bit default 1, bCusSupInput bit default 1, " 
                         + "coutaccset nvarchar(23), ioutyear smallint, coutsysname nvarchar(50) NOT NULL, coutsysver nvarchar(50), ioutperiod tinyint NOT NULL, coutsign nvarchar(80) NOT NULL, coutno_id nvarchar(100) NOT NULL, doutdate DATETIME, coutbillsign nvarchar(80), coutid nvarchar(50), iflag tinyint"
                         + ",iBG_ControlResult smallint null,daudit_date DateTime NULL,cblueoutno_id nvarchar(50) NULL,bWH_BgFlag bit,cDefine1 nvarchar(40),"
                         + "cDefine2 nvarchar(40),cDefine3 nvarchar(40),cDefine4 DateTime,cDefine5 int,cDefine6 DateTime,cDefine7 Float,cDefine8 nvarchar(4),cDefine9 nvarchar(8),"
@@ -135,6 +140,15 @@ namespace QTU8interface.Entities
                                             + Date + "','" + Date + "',1,1,1,"
                                             + money.ToString() + ",'" + depcode + "','" + itemcode + "','97','" + personcode + "')";
                             conn.Execute(strSql, out objOut);
+
+                            //现金流量
+                            CashFlow cashFlow = new CashFlow();
+                            cashFlow.Amount_f = money;
+                            cashFlow.Amount = money;
+                            cashFlow.cCashItem = coderesult.cashitemcode;
+                            cashFlows.Add(cashFlow);
+
+
                             rowno++;
                         }
                     }
@@ -173,10 +187,12 @@ namespace QTU8interface.Entities
                             switch (ctype.ToLower())
                             {
                                 case "loan":
+                                    dc="credit";
                                     strSql = "insert into " + obj.strTempTable
                                                     + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  ";
                                     break;
                                 case "repayloan":
+                                    dc="debit";
                                     strSql = "insert into " + obj.strTempTable
                                                     + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  ";
                                     break;
@@ -189,6 +205,13 @@ namespace QTU8interface.Entities
                                             + Date + "','" + Date + "',1,1,1,"
                                             + amount.ToString() + ",'" + depcode + "','" + itemcode + "','97','"+personcode+"')";
                             conn.Execute(strSql, out objOut);
+
+                            //现金流量
+                            setCashXml(u8login.UfDbName, obj, xmlDocCashFlow,
+                                                  strGuid, Month, Year, Date,
+                                                  cdigest, "", "",
+                                                  "", "", "", "",
+                                                  ccode, cashFlows, rowno.ToString(), dc);
                             rowno++;
                         }
                     }
@@ -212,6 +235,7 @@ namespace QTU8interface.Entities
 
                 obj.set_Connection(conn);
                 obj.LoginByUserToken(u8login.userToken);
+                obj.CashFlowColXml = xmlDocCashFlow.OuterXml;
                 if (obj.SaveVoucher())
                 {
                     strResult = "vouch save success!";
@@ -307,5 +331,61 @@ namespace QTU8interface.Entities
             }
             return result;
         }
+        
+        private static void setCashXml(string ConnStr, CVoucher.CVInterface obj, XmlDocument xmlDocCashFlow, string strGuid, string Month, string Year, string Date, string Digest, string EXCH, string VEN, string Dep, string PER, string ItemClass, string Item, string CCODE, List<CashFlow> cashFlows, string Inid, string Debit)
+        {
+            XmlNode xmlNo = xmlDocCashFlow.SelectSingleNode("root/rows").FirstChild;
+            int iRow = 1;
+
+            if (DBhelper.getDataFromSql(ConnStr, "select ccode from code where bCashItem=1 and ccode='" + CCODE + "' and iyear=" + Year) != "")
+            {
+                foreach (CashFlow cashFlow in cashFlows)
+                {
+                    XmlNode xnClone = xmlNo.Clone();
+                    xnClone.Attributes["key"].Value = Guid.NewGuid().ToString();
+                    xnClone.Attributes["RowGuid"].Value = strGuid;// xnClone.Attributes["key"].Value;
+                    xnClone.Attributes["iPeriod"].Value = Month;
+                    xnClone.Attributes["iYear"].Value = Year;
+                    xnClone.Attributes["iYPeriod"].Value = Year + string.Format("{0:D2}", Convert.ToInt32(Month));
+                    xnClone.Attributes["cCashItem"].Value = cashFlow.cCashItem;
+                    xnClone.Attributes["ccode"].Value = CCODE;
+                    xnClone.Attributes["dbill_date"].Value = Date;
+                    xnClone.Attributes["cdigest"].Value = Digest;
+                    xnClone.Attributes["iRow"].Value = iRow.ToString();
+                    xnClone.Attributes["inid"].Value = Inid;
+                    xnClone.Attributes["cexch_name"].Value = "";
+                    xnClone.Attributes["csup_id"].Value = VEN;
+                    xnClone.Attributes["cdept_id"].Value = Dep;
+                    xnClone.Attributes["cperson_id"].Value = PER;
+                    xnClone.Attributes["citem_class"].Value = ItemClass;
+                    xnClone.Attributes["citem_id"].Value = Item;
+
+                    switch (Debit.ToLower())
+                    {
+                        case "debit":
+                            xnClone.Attributes["md_f"].Value = (cashFlow.Amount_f).ToString();
+                            xnClone.Attributes["md"].Value = (cashFlow.Amount).ToString();
+                            xnClone.Attributes["mc_f"].Value = "0";
+                            xnClone.Attributes["mc"].Value = "0";
+                            break;
+                        case "credit":
+                            xnClone.Attributes["mc_f"].Value = (cashFlow.Amount_f).ToString();
+                            xnClone.Attributes["mc"].Value = (cashFlow.Amount).ToString();
+                            xnClone.Attributes["md_f"].Value = "0";
+                            xnClone.Attributes["md"].Value = "0";
+                            break;
+                    }
+
+                    iRow++;
+
+                    xmlDocCashFlow.SelectSingleNode("root/rows").AppendChild(xnClone);
+                }
+                
+
+            }
+            xmlDocCashFlow.SelectSingleNode("root/rows").RemoveChild(xmlNo);
+            //xmlDocCashFlow.Save(HttpContext.Current.Server.MapPath("..") + "\\Logs\\xmlDocCashFlow.xml");
+        }
+    
     }
 }

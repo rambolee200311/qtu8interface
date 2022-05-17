@@ -2,7 +2,7 @@
 <ufinterface>
   <company code="996" name="北京升鑫网络科技有限公司">
     <arcodes dsc="应收会计科目">
-      <arcode type="kzkm" ccode="112201" cashitem="01" dsc="应收科目" cashitemcode="01" cashitemname="销售商品、提供劳务收到的现金"/>
+      <arcode type="kzkm" ccode="112298" cashitem="01" dsc="应收科目" cashitemcode="01" cashitemname="销售商品、提供劳务收到的现金"/>
       <arcode type="xssrkm" ccode="60010101" dsc="销售收入科目"/>
       <arcode type="xssjkm" ccode="2221010202" dsc="销项税金科目">
         <xssjkm kplb="产品类" ccode="2221010202"/>

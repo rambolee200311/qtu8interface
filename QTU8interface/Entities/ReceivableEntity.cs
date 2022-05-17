@@ -156,6 +156,7 @@ namespace QTU8interface.Entities
 
                 #region//head
                 MSXML2.IXMLDOMNode xnnodehead = domHead.selectSingleNode("xml").selectSingleNode("rs:data").selectSingleNode("z:row");
+                
                 xnnodehead.attributes.getNamedItem("cDwCode").text = vencode;
                 xnnodehead.attributes.getNamedItem("cDeptCode").text = depcode;
                 xnnodehead.attributes.getNamedItem("cPerson").text = personcode;
@@ -169,6 +170,7 @@ namespace QTU8interface.Entities
 
                 xnnodehead.attributes.getNamedItem("cDefine11").text = payable.head.oacode;
                 xnnodehead.attributes.getNamedItem("cDefine12").text = payable.head.billno;
+                xnnodehead.attributes.getNamedItem("cDefine13").text = payable.head.person;
                 xnnodehead.attributes.getNamedItem("cDigest").text = payable.head.memo;
                 xnnodehead.attributes.getNamedItem("dVouchDate").text = payable.head.ddate.ToShortDateString();
                 CodeResult crKzkm = ARAPCodeEntity.getKzkm(payable.ztcode, u8login);
@@ -305,7 +307,7 @@ namespace QTU8interface.Entities
                     + "md_f money default 0, mc_f money default 0, nfrat float default 0, nd_s float default 0, nc_s float default 0, csettle nvarchar(23), "
                     + "cn_id nvarchar(30), dt_date DATETIME, cdept_id nvarchar(12), cperson_id nvarchar(80), ccus_id nvarchar(80), csup_id nvarchar (20), "
                     + "citem_id nvarchar(80), citem_class nvarchar(22), cname nvarchar(40), ccode_equal nvarchar(50), "
-                    + "bvouchedit bit default 0, bvouchaddordele bit default 0, bvouchmoneyhold bit default 0, bvalueedit bit default 0, bcodeedit bit default 0, ccodecontrol nvarchar(50), bPCSedit bit default 0, bDeptedit bit default 0, bItemedit bit default 0, bCusSupInput bit default 0, "
+                    + "bvouchedit bit default 1, bvouchaddordele bit default 1, bvouchmoneyhold bit default 1, bvalueedit bit default 1, bcodeedit bit default 1, ccodecontrol nvarchar(50), bPCSedit bit default 1, bDeptedit bit default 1, bItemedit bit default 1, bCusSupInput bit default 1, "
                     + "coutaccset nvarchar(23), ioutyear smallint, coutsysname nvarchar(50) NOT NULL, coutsysver nvarchar(50), ioutperiod tinyint NOT NULL, coutsign nvarchar(80) NOT NULL, coutno_id nvarchar(100) NOT NULL, doutdate DATETIME, coutbillsign nvarchar(80), coutid nvarchar(50), iflag tinyint"
                     + ",iBG_ControlResult smallint null,daudit_date DateTime NULL,cblueoutno_id nvarchar(50) NULL,bWH_BgFlag bit,cDefine1 nvarchar(40),"
                     + "cDefine2 nvarchar(40),cDefine3 nvarchar(40),cDefine4 DateTime,cDefine5 int,cDefine6 DateTime,cDefine7 Float,cDefine8 nvarchar(4),cDefine9 nvarchar(8),"
@@ -328,11 +330,11 @@ namespace QTU8interface.Entities
                 //ccode = "112201";                
                 
                 strSql = "insert into " + obj.strTempTable
-                + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id)  values("
+                + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class,cperson_id,cname)  values("
                 + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + drHead["cCode"].ToString() + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1,"
                     //+ drHead["iAmount"].ToString()
                 + sumTax.ToString()
-                + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "')";
+                + ",'" + drHead["cDeptCode"].ToString() + "','" + drHead["cItemCode"].ToString() + "','" + drHead["cItem_Class"].ToString() + "','" + drHead["cPerson"].ToString() + "','"+drHead["cDefine13"].ToString() + "')";
                 LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
                 conn.Execute(strSql, out objOut);
                 iRow++;
@@ -358,9 +360,9 @@ namespace QTU8interface.Entities
                     }
 
                     strSql = "insert into " + obj.strTempTable
-                    + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id)  values("
+                    + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id,cname)  values("
                     + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','" + vouchID + "','记','记','" + cDigest + "','AR" + vouchID + "','AR','" + u8login.cUserName + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iTax"].ToString()
-                    + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "')";
+                    + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "','" + drBody["cDefine28"].ToString() + "')";
                     LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
                     //sumTax += Convert.ToDecimal(drBody["iTax"]);
                     conn.Execute(strSql, out objOut);
@@ -380,7 +382,7 @@ namespace QTU8interface.Entities
                     String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='R0' and coutid='" + vouchID + "'");
                     String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='R0' and coutid='" + vouchID + "'");
                     String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
-                    strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
+                    strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doutbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
                     LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                     DBhelper.setDataFromSql(u8login.UfDbName, strSql);
 

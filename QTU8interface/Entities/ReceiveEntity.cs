@@ -300,7 +300,7 @@ namespace QTU8interface.Entities
                     + "md_f money default 0, mc_f money default 0, nfrat float default 0, nd_s float default 0, nc_s float default 0, csettle nvarchar(23), "
                     + "cn_id nvarchar(30), dt_date DATETIME, cdept_id nvarchar(12), cperson_id nvarchar(80), ccus_id nvarchar(80), csup_id nvarchar (20), "
                     + "citem_id nvarchar(80), citem_class nvarchar(22), cname nvarchar(40), ccode_equal nvarchar(50), "
-                    + "bvouchedit bit default 0, bvouchaddordele bit default 0, bvouchmoneyhold bit default 0, bvalueedit bit default 0, bcodeedit bit default 0, ccodecontrol nvarchar(50), bPCSedit bit default 0, bDeptedit bit default 0, bItemedit bit default 0, bCusSupInput bit default 0, "
+                    + "bvouchedit bit default 1, bvouchaddordele bit default 1, bvouchmoneyhold bit default 1, bvalueedit bit default 1, bcodeedit bit default 1, ccodecontrol nvarchar(50), bPCSedit bit default 1, bDeptedit bit default 1, bItemedit bit default 1, bCusSupInput bit default 1, " 
                     + "coutaccset nvarchar(23), ioutyear smallint, coutsysname nvarchar(50) NOT NULL, coutsysver nvarchar(50), ioutperiod tinyint NOT NULL, coutsign nvarchar(80) NOT NULL, coutno_id nvarchar(100) NOT NULL, doutdate DATETIME, coutbillsign nvarchar(80), coutid nvarchar(50), iflag tinyint"
                     + ",iBG_ControlResult smallint null,daudit_date DateTime NULL,cblueoutno_id nvarchar(50) NULL,bWH_BgFlag bit,cDefine1 nvarchar(40),"
                     + "cDefine2 nvarchar(40),cDefine3 nvarchar(40),cDefine4 DateTime,cDefine5 int,cDefine6 DateTime,cDefine7 Float,cDefine8 nvarchar(4),cDefine9 nvarchar(8),"
@@ -370,31 +370,18 @@ namespace QTU8interface.Entities
                 String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='48' and coutid='" + vouchID + "'");
                 String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='48' and coutid='" + vouchID + "'");
                 String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
-                strSql = "update ap_closebill set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where iID='" + cLink + "'";
+                strSql = "update ap_closebill set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doutbilldate='" + ddate.ToShortDateString() + "' where iID='" + cLink + "'";
                 LogHelper.WriteLog(typeof(ReceiveEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
-
-                /*
-                strSql = " update Ar_Detail set ccode='" + codeKzkm + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='48' and cCoVouchID='" + vouchID + "' and cCoVouchType='48' and iflag=0";
-                LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
-                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
-                strSql = " update Ar_Detail set ccode='" + codeDebit + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='48' and cCoVouchID='" + vouchID + "' and cCoVouchType='48' and iflag!=0";
-                LogHelper.WriteLog(typeof(ReceiveEntity), "apvouch:" + strSql);
-                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
-                 * */
-                strSql = "update Ap_Detail set cCode=b.cCode,isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "'"
-                        + " from Ap_Detail a inner join Ap_CloseBill b"
-                        + " on a.cVouchID=b.cVouchID and a.cCoVouchID=b.cVouchID "
-                        + " and iClosesID=0 and iCoClosesID=0"
-                        + " and a.cVouchType=b.cVouchType and a.cCoVouchType=b.cVouchType"
-                        + " and a.cVouchType='48' and a.cCoVouchType='48'"
-                        + " and a.cVouchID='" + vouchID + "' and a.cCoVouchID='" + vouchID + "'";
+                
+                strSql = "update Ap_CloseBill "
+                    + "set cPzID='" + cpzID + "',cPZNum='" + cPzNum + "',doutbilldate='" + ddate.ToShortDateString() + "'"
+                        + " where cVouchID='" + vouchID + "' and cVouchType='48'";
 
                 LogHelper.WriteLog(typeof(ReceivableEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
-                //strSql = " update Ap_Detail set ccode='" + ccodeCredit + "',isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='付款单',cPZid='" + cpzID + "' where cVouchID='" + vouchID + "' and cVouchType='49' and cCoVouchID='" + vouchID + "' and cCoVouchType='49' and iflag!=0";
-                strSql = "update Ap_Detail set cCode=b.cKm,isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "'"
-                        + " from Ap_Detail a inner join Ap_CloseBills b"
+                strSql = "update Ar_Detail set cCode=b.cKm,isignseq=1,cglsign='记',iglno_id=" + pzID + ",ino_id=" + pzID + ",cDigest='" + cDigest + "',cPZid='" + cpzID + "'"
+                        + " from Ar_Detail a inner join Ap_CloseBills b"
                         + " on iClosesID=b.ID and iCoClosesID=b.ID"
                         + " and a.cVouchType='48' and a.cCoVouchType='48'"
                         + " and a.cVouchID='" + vouchID + "' and a.cCoVouchID='" + vouchID + "'";

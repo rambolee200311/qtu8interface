@@ -225,7 +225,7 @@
     <Compile Include="Models\Receive\Receive_Head.cs" />
     <Compile Include="Models\Result\ClsResult.cs" />
     <Compile Include="Models\Vendor\Vendor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App_Data\AssemblyInfo.cs" />
     <Compile Include="UFIDA\DBhelper.cs" />
     <Compile Include="UFIDA\JsonHelper.cs" />
     <Compile Include="UFIDA\LogHelper.cs" />
@@ -384,9 +384,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>

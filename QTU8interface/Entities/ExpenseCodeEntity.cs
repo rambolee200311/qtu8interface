@@ -178,6 +178,7 @@ namespace QTU8interface.Entities
         public static CodeResult getOtherARCode(string ztcode)
         {
             string expensecode = "";
+            string cashitemcode = "";
             CodeResult result = new CodeResult();
             XmlDocument xmlDoc = new XmlDocument();
             XmlNode xmlNo = null;
@@ -190,6 +191,11 @@ namespace QTU8interface.Entities
                     expensecode = xmlNo.Attributes["u8code"].Value;
                     result.remsg = "";
                     result.recode = expensecode;
+                    if (xmlNo.Attributes["cashitemcode"] != null)
+                    {
+                        cashitemcode = xmlNo.Attributes["cashitemcode"].Value;
+                        result.cashitemcode = cashitemcode;
+                    }
                     //return result;
                 }
                 else

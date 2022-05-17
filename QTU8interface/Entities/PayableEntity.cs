@@ -47,37 +47,7 @@ namespace QTU8interface.Entities
                 re.remsg = strResult;
                 return;
             }
-            //检查人员是否存在
-            depcode = DBhelper.getDataFromSql(u8login.UfDbName, "select cDept_num from hr_hi_person where cPsn_Name='" + payable.head.person + "'");
-            personcode = DBhelper.getDataFromSql(u8login.UfDbName, "select cPsn_num from hr_hi_person where cPsn_Name='" + payable.head.person + "'");
-            if (depcode == "")
-            {
-                strResult = payable.head.person + "在U8人员档案中不存在";
-                re.recode = "222";
-                re.remsg = strResult;
-                return;
-            }
-            //检查项目是否存在
-            if (!string.IsNullOrEmpty(payable.head.projname))
-            {
-                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + payable.head.projname + "'");
-                if (itemcode == "")
-                {
-                    strResult = payable.head.projname + "在U8项目管理档案中不存在";
-                    re.recode = "222";
-                    re.remsg = strResult;
-                    return;
-                }
-            }
-            //检查供应商是否存在
-            vencode = DBhelper.getDataFromSql(u8login.UfDbName, "select cvencode from vendor where cvenname='" + payable.head.vendor + "'");
-            if (vencode == "")
-            {
-                strResult = payable.head.vendor + "在U8供应商档案中不存在";
-                re.recode = "222";
-                re.remsg = strResult;
-                return;
-            }
+            
             try
             {
                 conn.Open(u8login.UfDbName);
@@ -113,8 +83,7 @@ namespace QTU8interface.Entities
                     xnnodeclone.attributes.getNamedItem("iNatTax").text = tax.ToString();
                     xnnodeclone.attributes.getNamedItem("iTaxRate").text = taxrate.ToString();
 
-                    xnnodeclone.attributes.getNamedItem("cDeptCode").text = depcode;
-                    xnnodeclone.attributes.getNamedItem("cPerson").text = personcode;
+                   
                     //xnnodeclone.attributes.getNamedItem("cItemCode").text = itemcode;
                     //xnnodeclone.attributes.getNamedItem("cItem_Class").text = "97";
                     xnnodeclone.attributes.getNamedItem("cDigest").text = body.memo;
@@ -126,6 +95,8 @@ namespace QTU8interface.Entities
                     string sajkm = "";
                     string sijkm = "";
                     string person = "";
+                    depcode = "";
+                     personcode ="";
                     if (!string.IsNullOrEmpty(body.yjkm))
                     {
                         yjkm = body.yjkm;
@@ -145,7 +116,19 @@ namespace QTU8interface.Entities
                     if (!string.IsNullOrEmpty(body.person))
                     {
                         person = body.person;
+                        //检查人员是否存在
+                        depcode = DBhelper.getDataFromSql(u8login.UfDbName, "select cDept_num from hr_hi_person where cPsn_Name='" + person + "'");
+                        personcode = DBhelper.getDataFromSql(u8login.UfDbName, "select cPsn_num from hr_hi_person where cPsn_Name='" + person + "'");
+                        if (depcode == "")
+                        {
+                            strResult = person + "在U8人员档案中不存在";
+                            re.recode = "222";
+                            re.remsg = strResult;
+                            return;
+                        }
                     }
+                    xnnodeclone.attributes.getNamedItem("cDeptCode").text = depcode;
+                    xnnodeclone.attributes.getNamedItem("cPerson").text = personcode;
                     xnnodeclone.attributes.getNamedItem("cDefine22").text = yjkm;
                     xnnodeclone.attributes.getNamedItem("cDefine23").text = ejkm;
                     xnnodeclone.attributes.getNamedItem("cDefine24").text = sajkm;
@@ -203,6 +186,37 @@ namespace QTU8interface.Entities
                 #endregion
 
                 #region//head
+                //检查人员是否存在
+                depcode = DBhelper.getDataFromSql(u8login.UfDbName, "select cDept_num from hr_hi_person where cPsn_Name='" + payable.head.person + "'");
+                personcode = DBhelper.getDataFromSql(u8login.UfDbName, "select cPsn_num from hr_hi_person where cPsn_Name='" + payable.head.person + "'");
+                if (depcode == "")
+                {
+                    strResult = payable.head.person + "在U8人员档案中不存在";
+                    re.recode = "222";
+                    re.remsg = strResult;
+                    return;
+                }
+                //检查项目是否存在
+                if (!string.IsNullOrEmpty(payable.head.projname))
+                {
+                    itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + payable.head.projname + "'");
+                    if (itemcode == "")
+                    {
+                        strResult = payable.head.projname + "在U8项目管理档案中不存在";
+                        re.recode = "222";
+                        re.remsg = strResult;
+                        return;
+                    }
+                }
+                //检查供应商是否存在
+                vencode = DBhelper.getDataFromSql(u8login.UfDbName, "select cvencode from vendor where cvenname='" + payable.head.vendor + "'");
+                if (vencode == "")
+                {
+                    strResult = payable.head.vendor + "在U8供应商档案中不存在";
+                    re.recode = "222";
+                    re.remsg = strResult;
+                    return;
+                }
                 MSXML2.IXMLDOMNode xnnodehead = domHead.selectSingleNode("xml").selectSingleNode("rs:data").selectSingleNode("z:row");
                 xnnodehead.attributes.getNamedItem("cDwCode").text = vencode;
                 xnnodehead.attributes.getNamedItem("cDeptCode").text = depcode;
@@ -362,7 +376,7 @@ namespace QTU8interface.Entities
                     + "md_f money default 0, mc_f money default 0, nfrat float default 0, nd_s float default 0, nc_s float default 0, csettle nvarchar(23), "
                     + "cn_id nvarchar(30), dt_date DATETIME, cdept_id nvarchar(12), cperson_id nvarchar(80), ccus_id nvarchar(80), csup_id nvarchar (20), "
                     + "citem_id nvarchar(80), citem_class nvarchar(22), cname nvarchar(40), ccode_equal nvarchar(50), "
-                    + "bvouchedit bit default 0, bvouchaddordele bit default 0, bvouchmoneyhold bit default 0, bvalueedit bit default 0, bcodeedit bit default 0, ccodecontrol nvarchar(50), bPCSedit bit default 0, bDeptedit bit default 0, bItemedit bit default 0, bCusSupInput bit default 0, "
+                    + "bvouchedit bit default 1, bvouchaddordele bit default 1, bvouchmoneyhold bit default 1, bvalueedit bit default 1, bcodeedit bit default 1, ccodecontrol nvarchar(50), bPCSedit bit default 1, bDeptedit bit default 1, bItemedit bit default 1, bCusSupInput bit default 1, " 
                     + "coutaccset nvarchar(23), ioutyear smallint, coutsysname nvarchar(50) NOT NULL, coutsysver nvarchar(50), ioutperiod tinyint NOT NULL, coutsign nvarchar(80) NOT NULL, coutno_id nvarchar(100) NOT NULL, doutdate DATETIME, coutbillsign nvarchar(80), coutid nvarchar(50), iflag tinyint"
                     + ",iBG_ControlResult smallint null,daudit_date DateTime NULL,cblueoutno_id nvarchar(50) NULL,bWH_BgFlag bit,cDefine1 nvarchar(40),"
                     + "cDefine2 nvarchar(40),cDefine3 nvarchar(40),cDefine4 DateTime,cDefine5 int,cDefine6 DateTime,cDefine7 Float,cDefine8 nvarchar(4),cDefine9 nvarchar(8),"
@@ -452,7 +466,11 @@ namespace QTU8interface.Entities
                 String pzID = DBhelper.getDataFromSql(u8login.UfDbName, "select ino_id result from gl_accvouch where coutbillsign='P0' and coutid='" + vouchID + "'");
                 String cpzID = DBhelper.getDataFromSql(u8login.UfDbName, "select coutno_id result from gl_accvouch where coutbillsign='P0' and coutid='" + vouchID + "'");
                 String cPzNum = "记-" + string.Format("{0:D4}", Convert.ToInt32(pzID));
-                strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doubbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
+                strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doutbilldate='" + ddate.ToShortDateString() + "' where cLink='" + cLink + "'";
+                LogHelper.WriteLog(typeof(PayableEntity), "apvouch:" + strSql);
+                DBhelper.setDataFromSql(u8login.UfDbName, strSql);
+
+                strSql = "update ap_vouch set cPzId='" + cpzID + "',cPzNum='" + cPzNum + "',doutbilldate='" + ddate.ToShortDateString() + "' where cVouchID='" + vouchID + "' and cVouchType='P0'";
                 LogHelper.WriteLog(typeof(PayableEntity), "apvouch:" + strSql);
                 DBhelper.setDataFromSql(u8login.UfDbName, strSql);
 
