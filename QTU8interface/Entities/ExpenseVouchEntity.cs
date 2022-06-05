@@ -33,6 +33,7 @@ namespace QTU8interface.Entities
             decimal tax = 0m;
             decimal money = 0m;
             int vouchRows = 0;
+            string cmaker = "";
             XmlDocument xmlDoc = new XmlDocument();
             XmlNode xmlNo = null;
             XmlDocument xmlDocCashFlow = new XmlDocument();
@@ -51,6 +52,16 @@ namespace QTU8interface.Entities
                     re.remsg = re.ztcode + "对应帐套登录失败";
                     return;
                 }
+                //20220605 制单人等于推单人
+                if (string.IsNullOrEmpty(expense.head.cmaker))
+                {
+                    cmaker = u8login.cUserName;
+                }
+                else
+                {
+                    cmaker = expense.head.cmaker;
+                }
+
                 //检查凭证是否重复
                 strSql = "select i_id from gl_accvouch where cdigest like '%" + expense.head.oacode + "%' and isnull(iflag,0)=0";
                 LogHelper.WriteLog(typeof(ExpenseVouchEntity), strSql);
@@ -156,7 +167,7 @@ namespace QTU8interface.Entities
                                             + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class)  " +
                                             " values(" + Month + ",N'记',N'记', '"
                                             + cdigest
-                                            + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                            + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                             + ccode
                                             + ",N'','"
                                             + Date + "','" + Date + "',1,1,1,"
@@ -196,7 +207,7 @@ namespace QTU8interface.Entities
                                             + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class)  " +
                                             " values(" + Month + ",N'记',N'记', '"
                                             + cdigest
-                                            + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                            + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                             + ccode
                                             + ",N'','"
                                             + Date + "','" + Date + "',1,1,1,"
@@ -212,7 +223,7 @@ namespace QTU8interface.Entities
                                             + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class)  " +
                                             " values(" + Month + ",N'记',N'记', '"
                                             + cdigest
-                                            + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                            + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                             + ccode
                                             + ",N'','"
                                             + Date + "','" + Date + "',1,1,1,"
@@ -238,7 +249,7 @@ namespace QTU8interface.Entities
                                             + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,md,cdept_id,citem_id,citem_class)  " +
                                             " values(" + Month + ",N'记',N'记', '"
                                             + cdigest
-                                            + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                            + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                             + ccode
                                             + ",N'','"
                                             + Date + "','" + Date + "',1,1,1,"
@@ -274,7 +285,7 @@ namespace QTU8interface.Entities
                                         + "(ioutperiod,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class)  " +
                                         " values(" + Month + ",N'记',N'记', '"
                                         + cdigest
-                                        + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                        + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                         + ccode
                                         + ",N'','"
                                         + Date + "','" + Date + "',1,1,1,"

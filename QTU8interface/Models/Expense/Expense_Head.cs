@@ -14,5 +14,6 @@ namespace QTU8interface.Models.Expense
         public string prodname{get;set;}//产品名称 研发部门报销必填
         public string projname{get;set;}//项目名称 销售部门报销必填  
         public string accountcode { get; set; }//付款方帐号 
+        public string cmaker { get; set; }//制单人
     }
 }

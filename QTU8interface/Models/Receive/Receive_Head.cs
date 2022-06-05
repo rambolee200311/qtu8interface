@@ -16,6 +16,6 @@ namespace QTU8interface.Models.Receive
         public string prodname { get; set; }//产品名称
         public string accountcode { get; set; }//发票号
         public string memo { get; set; }//备注
-
+        public string cmaker { get; set; }//制单人
     }
 }

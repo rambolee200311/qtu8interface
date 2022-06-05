@@ -18,6 +18,6 @@ namespace QTU8interface.Models.Payable
         public string memo { get; set; }//备注
         public string yjkm { get; set; }//一级科目
         public string ejkm { get; set; }//二级科目
-
+        public string cmaker { get; set; }//制单人
     }
 }

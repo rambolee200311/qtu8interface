@@ -13,5 +13,6 @@ namespace QTU8interface.Models.Loan
         public string person { get; set; }//人员姓名
 
         public string accountcode { get; set; }//付款方帐号
+        public string cmaker { get; set; }//制单人
     }
 }

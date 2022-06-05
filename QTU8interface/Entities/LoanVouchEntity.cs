@@ -33,6 +33,7 @@ namespace QTU8interface.Entities
             decimal tax = 0m;
             decimal money = 0m;
             String dc="";
+            string cmaker = "";
             XmlDocument xmlDoc = new XmlDocument();
             XmlDocument xmlDocCashFlow = new XmlDocument();
             xmlDocCashFlow.Load(HttpContext.Current.Server.MapPath("..") + "\\UFIDA\\CashFlowColXml.xml");
@@ -47,6 +48,15 @@ namespace QTU8interface.Entities
                     re.recode = "111";
                     re.remsg = re.ztcode + "对应帐套登录失败";
                     return;
+                }
+                //20220605 制单人等于推单人
+                if (string.IsNullOrEmpty(expense.head.cmaker))
+                {
+                    cmaker = u8login.cUserName;
+                }
+                else
+                {
+                    cmaker = expense.head.cmaker;
                 }
                 //检查凭证是否重复
                 strResult = DBhelper.getDataFromSql(u8login.UfDbName, "select i_id from gl_accvouch where cdigest like '%" + expense.head.oacode + "%' and isnull(iflag,0)=0");
@@ -134,7 +144,7 @@ namespace QTU8interface.Entities
                              }
                             strSql+=                " values(" + Month + ",N'记',N'记', '"
                                             + cdigest
-                                            + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                            + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                             + ccode
                                             + ",N'','"
                                             + Date + "','" + Date + "',1,1,1,"
@@ -199,7 +209,7 @@ namespace QTU8interface.Entities
                             }
                                             strSql+=" values(" + Month + ",N'记',N'记', '"
                                             + cdigest
-                                            + "',N'" + strGuid + "',N'',N'" + u8login.cUserName + "'," + rowno.ToString() + ","
+                                            + "',N'" + strGuid + "',N'',N'" + cmaker + "'," + rowno.ToString() + ","
                                             + ccode
                                             + ",N'','"
                                             + Date + "','" + Date + "',1,1,1,"
