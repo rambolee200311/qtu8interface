@@ -43,6 +43,7 @@ namespace QTU8interface.UFIDA
                         sDate = DateTime.Now.ToShortDateString();
                     }
                 }
+                LogHelper.WriteLog(typeof(LogHelper), "login server:" + server + " data:" + sDate + " accid" + accid + " user:" + user);
                 if (!m_ologin.Login("AA", accid, sYear, user, password, sDate, server, ""))
                 {
                     return null;                    

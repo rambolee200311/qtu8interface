@@ -81,7 +81,7 @@ namespace QTU8interface.Entities
                 result.recode = expensecode;
                 result.cashitemcode = cashitemcode;
                 //itemclass itemcode
-                itemclass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + expensecode + "' and iyear="+u8login.cIYear);
+                itemclass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + expensecode + "' and bitem=1 and iyear="+u8login.cIYear);
                 if (!string.IsNullOrEmpty(itemclass))
                 {
                     //string strSql = "select citemcode from fitemss" + itemclass + " where citemname='" + projname + prodname + "'";
@@ -95,6 +95,13 @@ namespace QTU8interface.Entities
                         return result;
                     }
                 }
+                //else
+                //{
+
+                //    result.remsg = ztcode + "帐套 会计科目 " + expensecode + " 非项目辅助核算";
+                //    result.recode = "";
+                //    return result;
+                //}
 
             }
             catch(Exception ex)

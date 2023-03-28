@@ -332,11 +332,15 @@ namespace QTU8interface.Entities
             DataRow drHead = dtHead.Rows[0];           
 
             foreach (DataRow drBody in dtBody.Rows)
-            { sumTax += Convert.ToDecimal(drBody["iTax"]); }
+            { 
+                //sumTax += Convert.ToDecimal(drBody["iTax"]); 
+                //20220915 含税金额
+                sumTax += Convert.ToDecimal(drBody["iAmount"]); 
+            }
             #region//借方
             if (sumTax != 0)
             {                
-                //无税金额
+                //含税金额
                 //ccode = "112201";                
                 
                 strSql = "insert into " + obj.strTempTable
@@ -356,7 +360,27 @@ namespace QTU8interface.Entities
             
             foreach (DataRow drBody in dtBody.Rows)
             {
-                
+                //20220915 无税金额
+                if (Convert.ToDecimal(drBody["iNoTaxAmount"]) != 0)
+                {
+                    CodeResult crXssrkm = ARAPCodeEntity.getXssrkm(payable.ztcode);
+                    if (crXssrkm != null)
+                    {
+                        if (crXssrkm.recode != "")
+                        {
+                            ccode = crXssrkm.recode;
+                        }
+                    }
+                    strSql = "insert into " + obj.strTempTable
+                    + "(ioutperiod,ccus_id,coutbillsign,coutid,coutsign ,cSign,cdigest,coutno_id,coutsysname,cbill,inid,ccode,cexch_name ,doutbilldate,dt_date,bvouchedit,bvalueedit,bcodeedit,mc,cdept_id,citem_id,citem_class,cperson_id,cname)  values("
+                    + Month + ",'" + drHead["cDwCode"].ToString() + "','R0','R0" + vouchID + "','记','记','" + cDigest + "','ARR0" + vouchID + "','AR','" + cmaker + "'," + iRow.ToString() + ",'" + ccode + "',null,'" + ddate.ToShortDateString() + "',null,1,1,1," + drBody["iNoTaxAmount"].ToString()
+                    + ",'" + drBody["cDeptCode"].ToString() + "','" + drBody["cItemCode"].ToString() + "','" + drBody["cItem_Class"].ToString() + "','" + drBody["cPerson"].ToString() + "','" + drBody["cDefine28"].ToString() + "')";
+                    LogHelper.WriteLog(typeof(ReceivableEntity), "glaccvouch:" + strSql);
+                    //sumTax += Convert.ToDecimal(drBody["iTax"]);
+                    conn.Execute(strSql, out objOut);
+                    iRow++;
+
+                }
                 //税额
                 if (Convert.ToDecimal(drBody["iTax"]) != 0)
                 {

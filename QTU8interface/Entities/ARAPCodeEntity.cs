@@ -12,6 +12,40 @@ namespace QTU8interface.Entities
         static string filePath=AppDomain.CurrentDomain.BaseDirectory + "UFIDA\\arapcode.xml";
         static string filePathDep = AppDomain.CurrentDomain.BaseDirectory + "UFIDA\\codeexchange.xml";
         /*
+         * 20220915 销售收入科目
+         */
+        public static CodeResult getXssrkm(string ztcode)
+        {
+            CodeResult result = new CodeResult();
+            XmlDocument xmlDoc = new XmlDocument();
+            XmlNode xmlNo = null;
+            try
+            {
+                xmlDoc.Load(filePath);
+                xmlNo = xmlDoc.SelectSingleNode("ufinterface/company[@code='" + ztcode + "']/arcodes/arcode[@type='xssrkm']");
+               
+                if (xmlNo == null)
+                {
+                    result.remsg = ztcode + "帐套 " + " arcodes/arcode 未配置销售收入科目，请检查";
+                    LogHelper.WriteLog(typeof(ARAPCodeEntity), result.remsg);
+                    result.recode = "";
+                    return result;
+                }
+                result.remsg = "";
+                result.recode = xmlNo.Attributes["ccode"].Value.ToString(); ;
+            }
+            catch (Exception ex)
+            {
+                LogHelper.WriteLog(typeof(ARAPCodeEntity), ex);
+                result.remsg = ex.Message;
+                result.recode = "";
+                return result;
+            }
+            return result;
+        }
+
+
+        /*
          * 20220330 销项税金科目
          */
         public static CodeResult getXssjkm(string ztcode,string kplb)
@@ -101,6 +135,7 @@ namespace QTU8interface.Entities
             XmlDocument xmlDoc = new XmlDocument();
             XmlNode xmlNo = null;
             string ccode="";
+            string strSql="";
             try
             {
                 xmlDoc.Load(filePath);
@@ -128,8 +163,9 @@ namespace QTU8interface.Entities
                 {
                     result.cashitemcode = xmlNo.Attributes["cashitemcode"].Value;
                 }
-
-                string itemClass = DBhelper.getDataFromSql(u8login.UfDbName, "select cass_item from code where ccode='" + ccode + "' and iyear="+u8login.cIYear);
+                strSql="select cass_item from code where ccode='" + ccode + "' and iyear="+u8login.cIYear;
+                LogHelper.WriteLog(typeof(ARAPCodeEntity), "getAPKzkm:"+strSql);
+                string itemClass = DBhelper.getDataFromSql(u8login.UfDbName, strSql);
                 if (!string.IsNullOrEmpty(itemClass))
                 {
                     result.itemClass = itemClass;

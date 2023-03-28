@@ -138,7 +138,9 @@ namespace QTU8interface.Entities
                             if (!string.IsNullOrEmpty(body.projname))
                             {
                                 //itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeDebit.itemClass + " where citemname='" + body.projname + "'");
-                                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss" + codeDebit.itemClass + " where citemcode='" + body.projname + "'");
+                                strSql="select citemcode from fitemss" + codeDebit.itemClass + " where citemcode='" + body.projname + "'";
+                                LogHelper.WriteLog(typeof(PayEntity),"getItemcodeSql:"+strSql);
+                                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, strSql);
                                 if (string.IsNullOrEmpty(itemcode))
                                 {
                                     strResult = body.projname + "在U8项目管理档案中不存在";
