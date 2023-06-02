@@ -143,7 +143,7 @@ namespace QTU8interface.Entities
                     {
                         codeDebit = ARAPCodeEntity.getCgsjkm(payable.ztcode);
                     }
-                   
+                    LogHelper.WriteLog(typeof(PayableEntity), "codeDebit:" +JsonHelper.ToJson(codeDebit));
                     if (codeDebit != null)
                     {
                         if (!string.IsNullOrEmpty(codeDebit.recode))
@@ -196,18 +196,20 @@ namespace QTU8interface.Entities
                     re.remsg = strResult;
                     return;
                 }
-                //检查项目是否存在
-                if (!string.IsNullOrEmpty(payable.head.projname))
-                {
-                    itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + payable.head.projname + "'");
-                    if (itemcode == "")
-                    {
-                        strResult = payable.head.projname + "在U8项目管理档案中不存在";
-                        re.recode = "222";
-                        re.remsg = strResult;
-                        return;
-                    }
-                }
+
+                ////检查项目是否存在
+                itemcode = payable.head.projname;
+                //if (!string.IsNullOrEmpty(payable.head.projname))
+                //{
+                //    itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + payable.head.projname + "'");
+                //    if (itemcode == "")
+                //    {
+                //        strResult = payable.head.projname + "在U8项目管理档案中不存在";
+                //        re.recode = "222";
+                //        re.remsg = strResult;
+                //        return;
+                //    }
+                //}
                 //检查供应商是否存在
                 vencode = DBhelper.getDataFromSql(u8login.UfDbName, "select cvencode from vendor where cvenname='" + payable.head.vendor + "'");
                 if (vencode == "")

@@ -63,17 +63,18 @@ namespace QTU8interface.Entities
                 return;
             }
             //检查项目是否存在
-            if (!string.IsNullOrEmpty(pay.head.projname))
-            {
-                itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + pay.head.projname + "'");
-                if (itemcode == "")
-                {
-                    strResult = pay.head.projname + "在U8项目管理档案中不存在";
-                    re.recode = "222";
-                    re.remsg = strResult;
-                    return;
-                }
-            }
+            itemcode = pay.head.projname;
+            //if (!string.IsNullOrEmpty(pay.head.projname))
+            //{
+            //    itemcode = DBhelper.getDataFromSql(u8login.UfDbName, "select citemcode from fitemss97 where citemcode='" + pay.head.projname + "'");
+            //    if (itemcode == "")
+            //    {
+            //        strResult = pay.head.projname + "在U8项目管理档案中不存在";
+            //        re.recode = "222";
+            //        re.remsg = strResult;
+            //        return;
+            //    }
+            //}
             //检查客户是否存在
             vencode = DBhelper.getDataFromSql(u8login.UfDbName, "select ccuscode from customer where ccusname='" + pay.head.customer + "'");
             if (vencode == "")
